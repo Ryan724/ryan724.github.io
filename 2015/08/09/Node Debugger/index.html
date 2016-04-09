@@ -81,36 +81,30 @@
 
 
 <meta name="description" content="node 调试
-##一. 安装node-inspector  
-npm install -g node-inspector 
-##二. 调试模式运行
-node –debug-brk app.js默认端口5858 
+一. 安装node-inspectornpm install -g node-inspector 
+二. 调试模式运行node –debug-brk app.js默认端口5858 
 node –debug-brk[=3000] app.js启动监听node-inspector
 node-inspector &amp;amp;修改端口
-node-inspector  –web">
+node-inspector  –web-port=[p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node Debugger">
 <meta property="og:url" content="http://yoursite.com/2015/08/09/Node Debugger/index.html">
 <meta property="og:site_name" content="Ryan724">
 <meta property="og:description" content="node 调试
-##一. 安装node-inspector  
-npm install -g node-inspector 
-##二. 调试模式运行
-node –debug-brk app.js默认端口5858 
+一. 安装node-inspectornpm install -g node-inspector 
+二. 调试模式运行node –debug-brk app.js默认端口5858 
 node –debug-brk[=3000] app.js启动监听node-inspector
 node-inspector &amp;amp;修改端口
-node-inspector  –web">
-<meta property="og:updated_time" content="2016-04-09T08:17:07.000Z">
+node-inspector  –web-port=[p">
+<meta property="og:updated_time" content="2016-04-09T08:19:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node Debugger">
 <meta name="twitter:description" content="node 调试
-##一. 安装node-inspector  
-npm install -g node-inspector 
-##二. 调试模式运行
-node –debug-brk app.js默认端口5858 
+一. 安装node-inspectornpm install -g node-inspector 
+二. 调试模式运行node –debug-brk app.js默认端口5858 
 node –debug-brk[=3000] app.js启动监听node-inspector
 node-inspector &amp;amp;修改端口
-node-inspector  –web">
+node-inspector  –web-port=[p">
 
 
 
@@ -315,15 +309,12 @@ node-inspector  –web">
 
       
         <p><a href="http://blog.csdn.net/haidaochen/article/details/8570186" target="_blank" rel="external">node 调试</a></p>
-<p>##一. 安装node-inspector  </p>
-<p>npm install -g node-inspector </p>
-<p>##二. 调试模式运行</p>
-<p>node –debug-brk app.js<br>默认端口5858 </p>
+<h2 id="一-安装node-inspector"><a href="#一-安装node-inspector" class="headerlink" title="一. 安装node-inspector"></a>一. 安装node-inspector</h2><p>npm install -g node-inspector </p>
+<h2 id="二-调试模式运行"><a href="#二-调试模式运行" class="headerlink" title="二. 调试模式运行"></a>二. 调试模式运行</h2><p>node –debug-brk app.js<br>默认端口5858 </p>
 <p>node –debug-brk[=3000] app.js<br>启动监听node-inspector</p>
 <p>node-inspector &amp;<br>修改端口</p>
 <p>node-inspector  –web-port=[port]</p>
-<p>##三. 进入调试页面</p>
-<p><a href="http://[ip" target="_blank" rel="external">http://[ip</a> address]:8080/debug?port=5858</p>
+<h2 id="三-进入调试页面"><a href="#三-进入调试页面" class="headerlink" title="三. 进入调试页面"></a>三. 进入调试页面</h2><p><a href="http://[ip" target="_blank" rel="external">http://[ip</a> address]:8080/debug?port=5858</p>
 <p>修改后自动重启</p>
 <p>npm install supervisor -g</p>
 <p>supervisor app.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//要监控的文件夹或js文件，默认为&apos;.&apos;</span><br><span class="line">-w|--watch &lt;watchItems&gt;</span><br><span class="line">//要忽略监控的文件夹或js文件  </span><br><span class="line">-i|--ignore &lt;ignoreItems&gt;</span><br><span class="line">//监控文件变化的时间间隔（周期），默认为Node.js内置的时间</span><br><span class="line">-p|--poll-interval &lt;milliseconds&gt;</span><br><span class="line">//要监控的文件扩展名，默认为&apos;node|js&apos;</span><br><span class="line">-e|--extensions &lt;extensions&gt;</span><br><span class="line">//要执行的主应用程序，默认为&apos;node&apos;</span><br><span class="line">-x|--exec &lt;executable&gt;</span><br><span class="line">//开启debug模式（用--debug flag来启动node）</span><br><span class="line">--debug</span><br><span class="line">//安静模式，不显示DEBUG信息</span><br><span class="line">-q|--quiet</span><br></pre></td></tr></table></figure></p>
@@ -482,7 +473,7 @@ node-inspector  –web">
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-安装node-inspector"><span class="nav-number">1.</span> <span class="nav-text">一. 安装node-inspector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-调试模式运行"><span class="nav-number">2.</span> <span class="nav-text">二. 调试模式运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-进入调试页面"><span class="nav-number">3.</span> <span class="nav-text">三. 进入调试页面</span></a></li></ol></div>
             
           </div>
         </section>

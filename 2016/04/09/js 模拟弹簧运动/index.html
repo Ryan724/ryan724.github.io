@@ -80,26 +80,20 @@
 
 
 
-<meta name="description" content="###速度图
-
-###关键代码
-123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,er">
+<meta name="description" content="速度图
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js 模拟弹簧运动">
 <meta property="og:url" content="http://yoursite.com/2016/04/09/js 模拟弹簧运动/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="###速度图
-
-###关键代码
-123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,er">
+<meta property="og:description" content="速度图
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargi">
 <meta property="og:image" content="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png">
-<meta property="og:updated_time" content="2016-04-09T08:16:59.000Z">
+<meta property="og:updated_time" content="2016-04-09T08:19:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js 模拟弹簧运动">
-<meta name="twitter:description" content="###速度图
-
-###关键代码
-123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,er">
+<meta name="twitter:description" content="速度图
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargi">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png">
 
 
@@ -304,10 +298,8 @@
       
 
       
-        <p>###速度图</p>
-<p><img src="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png" alt="Alt text"></p>
-<p>###关键代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">   (<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">x,v</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> result= (<span class="function"><span class="keyword">function</span> <span class="title">stepper</span>(<span class="params">x, v</span>) </span>&#123;</span><br><span class="line">               <span class="keyword">var</span> frameRate =<span class="number">1</span>/<span class="number">60</span>, destX = <span class="number">0</span>, k =<span class="number">100</span>, b = <span class="number">20</span>,errorMargin = <span class="number">0.00001</span>;</span><br><span class="line">                <span class="comment">// 弹簧拉力 =  弹性系数 * 拉伸距离</span></span><br><span class="line">                <span class="keyword">var</span> Fspring = -k * (x - destX);</span><br><span class="line">                <span class="comment">// Fdamper = (cpsv^2)/2  </span></span><br><span class="line">                <span class="comment">// 简化  </span></span><br><span class="line">                <span class="comment">// 阻力 = 阻力系数* 阻力系数</span></span><br><span class="line">                <span class="keyword">var</span> Fdamper = -b * v;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">//F=ma  m忽略</span></span><br><span class="line">                <span class="keyword">var</span> a = Fspring + Fdamper;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">// if (window.hackOn) frameRate = 1 / 300;</span></span><br><span class="line">          </span><br><span class="line">                <span class="keyword">var</span> newV = v + a * frameRate;</span><br><span class="line">                <span class="keyword">var</span> newX = x + newV * frameRate;</span><br><span class="line">          </span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(newV - v) &lt; errorMargin &amp;&amp; <span class="built_in">Math</span>.abs(newX - x) &lt; errorMargin) &#123;</span><br><span class="line">                  <span class="keyword">return</span> [destX, <span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> [newX, newV];</span><br><span class="line">              &#125;)(x,v)</span><br><span class="line">      <span class="keyword">if</span>(result[<span class="number">0</span>]&gt;<span class="number">0.1</span>)&#123;</span><br><span class="line">        step(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br><span class="line">      &#125;</span><br><span class="line">&#125;)(<span class="number">300</span>,<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+        <h3 id="速度图"><a href="#速度图" class="headerlink" title="速度图"></a>速度图</h3><p><img src="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png" alt="Alt text"></p>
+<h3 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">   (<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">x,v</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> result= (<span class="function"><span class="keyword">function</span> <span class="title">stepper</span>(<span class="params">x, v</span>) </span>&#123;</span><br><span class="line">               <span class="keyword">var</span> frameRate =<span class="number">1</span>/<span class="number">60</span>, destX = <span class="number">0</span>, k =<span class="number">100</span>, b = <span class="number">20</span>,errorMargin = <span class="number">0.00001</span>;</span><br><span class="line">                <span class="comment">// 弹簧拉力 =  弹性系数 * 拉伸距离</span></span><br><span class="line">                <span class="keyword">var</span> Fspring = -k * (x - destX);</span><br><span class="line">                <span class="comment">// Fdamper = (cpsv^2)/2  </span></span><br><span class="line">                <span class="comment">// 简化  </span></span><br><span class="line">                <span class="comment">// 阻力 = 阻力系数* 阻力系数</span></span><br><span class="line">                <span class="keyword">var</span> Fdamper = -b * v;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">//F=ma  m忽略</span></span><br><span class="line">                <span class="keyword">var</span> a = Fspring + Fdamper;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">// if (window.hackOn) frameRate = 1 / 300;</span></span><br><span class="line">          </span><br><span class="line">                <span class="keyword">var</span> newV = v + a * frameRate;</span><br><span class="line">                <span class="keyword">var</span> newX = x + newV * frameRate;</span><br><span class="line">          </span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(newV - v) &lt; errorMargin &amp;&amp; <span class="built_in">Math</span>.abs(newX - x) &lt; errorMargin) &#123;</span><br><span class="line">                  <span class="keyword">return</span> [destX, <span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> [newX, newV];</span><br><span class="line">              &#125;)(x,v)</span><br><span class="line">      <span class="keyword">if</span>(result[<span class="number">0</span>]&gt;<span class="number">0.1</span>)&#123;</span><br><span class="line">        step(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br><span class="line">      &#125;</span><br><span class="line">&#125;)(<span class="number">300</span>,<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -459,7 +451,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#速度图"><span class="nav-number">1.</span> <span class="nav-text">速度图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键代码"><span class="nav-number">2.</span> <span class="nav-text">关键代码</span></a></li></ol></div>
             
           </div>
         </section>
