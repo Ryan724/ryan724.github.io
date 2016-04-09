@@ -80,15 +80,15 @@
 
 
 
-<meta name="description">
+<meta name="description" content="智者捋思聚目，愚者窥点自欺">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ryan724">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description">
+<meta property="og:description" content="智者捋思聚目，愚者窥点自欺">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ryan724">
-<meta name="twitter:description">
+<meta name="twitter:description" content="智者捋思聚目，愚者窥点自欺">
 
 
 
@@ -379,124 +379,7 @@
   
   
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/09/setTimeout与this/" itemprop="url">
-                  setTimeout与this
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
-              2016-04-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/09/setTimeout与this/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/setTimeout与this/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ###问题的开始：
-12345function fun()&#123;	doSomething();	setTimeout(func,10)&#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
-###怎么考虑这个问题
-预测：
-1. 是自己调用，可以访问上一个调用着
-2. 是顶级对象调用（global，window）
-3. 是最初父级对象调用
-关注点始终在调用，我们通过this就可以观察，this是方法的持有者
-123456789function obj() &#123;	this.fn
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/09/setTimeout与this/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-categories " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
       <header class="post-header">
@@ -644,7 +527,7 @@ Phone
   
   
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
       <header class="post-header">
@@ -712,6 +595,123 @@ Phone
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/09/js 模拟弹簧运动/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/09/setTimeout与this/" itemprop="url">
+                  setTimeout与this
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
+              2016-04-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/09/setTimeout与this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/setTimeout与this/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ###问题的开始：
+12345function fun()&#123;	doSomething();	setTimeout(func,10)&#125;fun();
+###提问
+－ 这个是递归调用吗？
+－ 准确表达是：是fun自己调用自己吗？
+－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
+###怎么考虑这个问题
+预测：
+1. 是自己调用，可以访问上一个调用着
+2. 是顶级对象调用（global，window）
+3. 是最初父级对象调用
+关注点始终在调用，我们通过this就可以观察，this是方法的持有者
+123456789function obj() &#123;	this.fn
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/09/setTimeout与this/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1006,7 +1006,7 @@ npm line 方式一. 操作流程
                src="https://avatars3.githubusercontent.com/u/5319124?v=3&s=460"
                alt="ryan724" />
           <p class="site-author-name" itemprop="name">ryan724</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">智者捋思聚目，愚者窥点自欺</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -1028,7 +1028,7 @@ npm line 方式一. 操作流程
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
