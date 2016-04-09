@@ -181,16 +181,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -210,11 +200,51 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'tjyyWsHmjQ_jXKrc8TgZ','2.0.0');
+</script>
+
+
+
+    </div>
   
 </nav>
 
@@ -227,6 +257,118 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/09/JSON实例化三种方式/" itemprop="url">
+                  JSON字符串转换的三种方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
+              2016-04-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/09/JSON实例化三种方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/JSON实例化三种方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          json字符串
+{ &quot;prop&quot;: &quot;val&quot; } 是个合法的JSON，{ prop: &quot;val&quot; } 和 { &#39;prop&#39;: &#39;val&#39; } 是不合法的JSON
+##解析JSON的三种方式123var jsonObj = eval("("+ jsonStr+")") var jsonObj = (new Function("return " + jsonStr))();var jsonObj = JSON.parse(jsonStr)
+三种方式使用差异，性能差异
+
+
+方式安全效率是否有合法性要求
+ p
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/09/JSON实例化三种方式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -300,11 +442,128 @@
         
           
           速度图
-关键代码123456789101112131415161718192021222324252627   (function step(x,v)&#123;     var result= (function stepper(x, v) &#123;               var fra
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&#123;     var result= (function stepper(x, v) &#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargin = 0.00001;                // 弹簧拉力 =  弹性系数 * 拉伸距离                var Fspring = -k * (x - destX);   
           ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/09/js 模拟弹簧运动/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/09/setTimeout与this/" itemprop="url">
+                  setTimeout与this
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
+              2016-04-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/09/setTimeout与this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/setTimeout与this/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ###问题的开始：
+12345function fun()&#123;	doSomething();	setTimeout(func,10)&#125;fun();
+###提问
+－ 这个是递归调用吗？
+－ 准确表达是：是fun自己调用自己吗？
+－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
+###怎么考虑这个问题
+预测：
+1. 是自己调用，可以访问上一个调用着
+2. 是顶级对象调用（global，window）
+3. 是最初父级对象调用
+关注点始终在调用，我们通过this就可以观察，this是方法的持有者
+123456789function obj() &#123;	this.fn
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/09/setTimeout与this/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -411,228 +670,29 @@
 小标题H11# 小标题H1
 小标题H21## 小标题H2
 小标题H31### 小标题H3
-强调斜体123*斜体*_斜体__ 斜体 _(_或
+强调斜体123*斜体*_斜体__ 斜体 _(_或者*两边有空格者表示正常字符)
+加粗1234**加粗**__加粗____ 加粗 __(_或者*两边有空格者表示正常字符)***加粗斜体*** 或者 ___特别强调___ (示例：粗斜体)
+表格
+
+
+Item
+Value
+Qty
+
+
+
+
+Computer
+1600 USD
+5
+
+
+Phone
+12 U
           ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/09/github-md文档编写规范/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/09/JSON实例化三种方式/" itemprop="url">
-                  JSON字符串转换的三种方式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
-              2016-04-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/09/JSON实例化三种方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/JSON实例化三种方式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          json字符串
-{ &quot;prop&quot;: &quot;val&quot; } 是个合法的JSON，{ prop: &quot;val&quot; } 和 { &#39;prop&#39;: &#39;val&#39; } 是不合法的JSON
-##解析JSON的三种方式123var js
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/09/JSON实例化三种方式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/09/setTimeout与this/" itemprop="url">
-                  setTimeout与this
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
-              2016-04-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/09/setTimeout与this/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/09/setTimeout与this/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ###问题的开始：
-12345function fun()&#123;	doSomething();	setTimeout(func,10)&#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问到前执行fun中的参数吗
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/09/setTimeout与this/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -737,7 +797,12 @@
 一. 安装node-inspectornpm install -g node-inspector 
 二. 调试模式运行node –debug-brk app.js默认端口5858 
 node –debug-brk[=3000] app.js启动监听node-inspector
-nod
+node-inspector &amp;修改端口
+node-inspector  –web-port=[port]
+三. 进入调试页面http://[ip address]:8080/debug?port=5858
+修改后自动重启
+npm install supervisor -g
+supervisor 
           ...
 
           <div class="post-more-link text-center">
@@ -847,7 +912,12 @@ npm line 方式一. 操作流程
 我们在开发的目录下，编写一个最简单的node可执行文件a.js12#!/usr/bin/env nodeconsole.log('hello Ryan');
 
 
-#!/u
+#!/usr/bin/env node这句很重要，后面解释。
+
+建立package.json文件
+123456&#123;    "name":"npm-link",    "bin":&#123;        "ryan":"a.js"    &#125;&#125;
+
+在该文件夹下执行npm link
           ...
 
           <div class="post-more-link text-center">
@@ -966,9 +1036,18 @@ npm line 方式一. 操作流程
               <span class="links-of-author-item">
                 <a href="https://www.zhihu.com/people/zhengryan" target="_blank">
                   
-                    <i class="fa fa-zhihu"></i>
+                    <i class="fa fa-globe"></i>
                   
                   zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="zpj090724@163.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  email
                 </a>
               </span>
             
@@ -1102,7 +1181,7 @@ npm line 方式一. 操作流程
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"http://dev.duoshuo.com/user/13798344"};
+    var duoshuoQuery = {short_name:"ryan"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
