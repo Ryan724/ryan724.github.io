@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -80,25 +80,22 @@
 
 
 
-<meta name="description" content="title:JSON字符串转换的三种方式date:2016-04-09 14:16:37
-tags:javascriptjson字符串
+<meta name="description" content="json字符串
 { &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
-##解析JSON的三种">
+##解析JSON的三种方式123var jsonObj = eval(&quot;(&quot;+ jsonStr+&quot;)&quot;) var jsonObj = (new">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ryan724">
+<meta property="og:title" content="JSON字符串转换的三种方式">
 <meta property="og:url" content="http://yoursite.com/2016/04/09/JSON实例化三种方式/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="title:JSON字符串转换的三种方式date:2016-04-09 14:16:37
-tags:javascriptjson字符串
+<meta property="og:description" content="json字符串
 { &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
-##解析JSON的三种">
-<meta property="og:updated_time" content="2016-04-09T07:20:21.000Z">
+##解析JSON的三种方式123var jsonObj = eval(&quot;(&quot;+ jsonStr+&quot;)&quot;) var jsonObj = (new">
+<meta property="og:updated_time" content="2016-04-09T07:22:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ryan724">
-<meta name="twitter:description" content="title:JSON字符串转换的三种方式date:2016-04-09 14:16:37
-tags:javascriptjson字符串
+<meta name="twitter:title" content="JSON字符串转换的三种方式">
+<meta name="twitter:description" content="json字符串
 { &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
-##解析JSON的三种">
+##解析JSON的三种方式123var jsonObj = eval(&quot;(&quot;+ jsonStr+&quot;)&quot;) var jsonObj = (new">
 
 
 
@@ -116,7 +113,7 @@ tags:javascriptjson字符串
   };
 </script>
 
-  <title>  | Ryan724 </title>
+  <title> JSON字符串转换的三种方式 | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +233,7 @@ tags:javascriptjson字符串
             
             
               
-                
+                JSON字符串转换的三种方式
               
             
           </h1>
@@ -248,7 +245,7 @@ tags:javascriptjson字符串
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T11:00:11+08:00" content="2016-04-09">
+            <time itemprop="dateCreated" datetime="2016-04-09T14:16:37+08:00" content="2016-04-09">
               2016-04-09
             </time>
           </span>
@@ -275,9 +272,7 @@ tags:javascriptjson字符串
       
 
       
-        <hr>
-<p>title:JSON字符串转换的三种方式<br>date:2016-04-09 14:16:37</p>
-<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>json字符串</p>
+        <p>json字符串</p>
 <p><code>{ &quot;prop&quot;: &quot;val&quot; }</code> 是个合法的JSON，<br><code>{ prop: &quot;val&quot; }</code> 和 <code>{ &#39;prop&#39;: &#39;val&#39; }</code> 是不合法的JSON</p>
 <p>##解析JSON的三种方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">eval</span>(<span class="string">"("</span>+ jsonStr+<span class="string">")"</span>) </span><br><span class="line"><span class="keyword">var</span> jsonObj = (<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonStr))();</span><br><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">JSON</span>.parse(jsonStr)</span><br></pre></td></tr></table></figure></p>
 <p>三种方式使用差异，性能差异</p>
@@ -307,21 +302,27 @@ tags:javascriptjson字符串
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/09/setTimeout与this/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/04/09/js 模拟弹簧运动/" rel="next" title="js 模拟弹簧运动">
+                <i class="fa fa-chevron-left"></i> js 模拟弹簧运动
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/github md文档编写规范/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/09/aaa/" rel="prev" title="aaa">
+                aaa <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -390,13 +391,20 @@ tags:javascriptjson字符串
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -424,7 +432,7 @@ tags:javascriptjson字符串
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-javascript"><span class="nav-number">1.</span> <span class="nav-text">tags:javascript</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

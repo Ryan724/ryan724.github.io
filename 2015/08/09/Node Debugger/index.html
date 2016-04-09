@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,Node," />
 
 
 
@@ -80,34 +80,37 @@
 
 
 
-<meta name="description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
+<meta name="description" content="node 调试
+##一. 安装node-inspector  
+npm install -g node-inspector 
+##二. 调试模式运行
+node –debug-brk app.js默认端口5858 
+node –debug-brk[=3000] app.js启动监听node-inspector
+node-inspector &amp;amp;修改端口
+node-inspector  –web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ryan724">
-<meta property="og:url" content="http://yoursite.com/2016/04/09/setTimeout与this/index.html">
+<meta property="og:title" content="Node Debugger">
+<meta property="og:url" content="http://yoursite.com/2015/08/09/Node Debugger/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
-<meta property="og:updated_time" content="2016-04-09T07:20:39.000Z">
+<meta property="og:description" content="node 调试
+##一. 安装node-inspector  
+npm install -g node-inspector 
+##二. 调试模式运行
+node –debug-brk app.js默认端口5858 
+node –debug-brk[=3000] app.js启动监听node-inspector
+node-inspector &amp;amp;修改端口
+node-inspector  –web">
+<meta property="og:updated_time" content="2016-04-09T07:23:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ryan724">
-<meta name="twitter:description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
+<meta name="twitter:title" content="Node Debugger">
+<meta name="twitter:description" content="node 调试
+##一. 安装node-inspector  
+npm install -g node-inspector 
+##二. 调试模式运行
+node –debug-brk app.js默认端口5858 
+node –debug-brk[=3000] app.js启动监听node-inspector
+node-inspector &amp;amp;修改端口
+node-inspector  –web">
 
 
 
@@ -125,7 +128,7 @@ tags:javascript###问题的开始：
   };
 </script>
 
-  <title>  | Ryan724 </title>
+  <title> Node Debugger | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +248,7 @@ tags:javascript###问题的开始：
             
             
               
-                
+                Node Debugger
               
             
           </h1>
@@ -257,8 +260,8 @@ tags:javascript###问题的开始：
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T11:00:11+08:00" content="2016-04-09">
-              2016-04-09
+            <time itemprop="dateCreated" datetime="2015-08-09T14:16:37+08:00" content="2015-08-09">
+              2015-08-09
             </time>
           </span>
 
@@ -284,23 +287,20 @@ tags:javascript###问题的开始：
       
 
       
-        <hr>
-<p>title:setTimeout与this<br>date:2016-04-09 14:16:37</p>
-<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>###问题的开始：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
-<p>###提问</p>
-<pre><code>－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
-</code></pre><p>###怎么考虑这个问题</p>
-<p>预测：<br></p>
-<pre><code>1. 是自己调用，可以访问上一个调用着
-2. 是顶级对象调用（global，window）
-3. 是最初父级对象调用
-</code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论</p>
-<p> setTimeout是顶级对象调用</p>
+        <p><a href="http://blog.csdn.net/haidaochen/article/details/8570186" target="_blank" rel="external">node 调试</a></p>
+<p>##一. 安装node-inspector  </p>
+<p>npm install -g node-inspector </p>
+<p>##二. 调试模式运行</p>
+<p>node –debug-brk app.js<br>默认端口5858 </p>
+<p>node –debug-brk[=3000] app.js<br>启动监听node-inspector</p>
+<p>node-inspector &amp;<br>修改端口</p>
+<p>node-inspector  –web-port=[port]</p>
+<p>##三. 进入调试页面</p>
+<p><a href="http://[ip" target="_blank" rel="external">http://[ip</a> address]:8080/debug?port=5858</p>
+<p>修改后自动重启</p>
+<p>npm install supervisor -g</p>
+<p>supervisor app.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//要监控的文件夹或js文件，默认为&apos;.&apos;</span><br><span class="line">-w|--watch &lt;watchItems&gt;</span><br><span class="line">//要忽略监控的文件夹或js文件  </span><br><span class="line">-i|--ignore &lt;ignoreItems&gt;</span><br><span class="line">//监控文件变化的时间间隔（周期），默认为Node.js内置的时间</span><br><span class="line">-p|--poll-interval &lt;milliseconds&gt;</span><br><span class="line">//要监控的文件扩展名，默认为&apos;node|js&apos;</span><br><span class="line">-e|--extensions &lt;extensions&gt;</span><br><span class="line">//要执行的主应用程序，默认为&apos;node&apos;</span><br><span class="line">-x|--exec &lt;executable&gt;</span><br><span class="line">//开启debug模式（用--debug flag来启动node）</span><br><span class="line">--debug</span><br><span class="line">//安静模式，不显示DEBUG信息</span><br><span class="line">-q|--quiet</span><br></pre></td></tr></table></figure></p>
+<p>Grunt 压缩<br><a href="http://www.cnblogs.com/artwl/archive/2013/11/29/3449303.html" target="_blank" rel="external">uglify</a><br><a href="http://segmentfault.com/a/1190000000343005" target="_blank" rel="external">enter link description here</a></p>
 
       
     </div>
@@ -319,12 +319,18 @@ tags:javascript###问题的开始：
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javascript-Node/" rel="tag">#javascript,Node</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/09/Node Debugger/" rel="next" title="Node Debugger">
+              <a href="/2015/07/10/npm link的研究/" rel="next" title="Node Debugger">
                 <i class="fa fa-chevron-left"></i> Node Debugger
               </a>
             
@@ -332,7 +338,7 @@ tags:javascript###问题的开始：
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/github md文档编写规范/" rel="prev" title="">
+              <a href="/2016/04/09/setTimeout与this/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -443,7 +449,7 @@ tags:javascript###问题的开始：
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-javascript"><span class="nav-number">1.</span> <span class="nav-text">tags:javascript</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

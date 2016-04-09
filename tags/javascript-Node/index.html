@@ -80,34 +80,15 @@
 
 
 
-<meta name="description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
-<meta property="og:type" content="article">
+<meta name="description">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Ryan724">
-<meta property="og:url" content="http://yoursite.com/2016/04/09/setTimeout与this/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/javascript-Node/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
-<meta property="og:updated_time" content="2016-04-09T07:20:39.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ryan724">
-<meta name="twitter:description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
+<meta name="twitter:description">
 
 
 
@@ -125,7 +106,7 @@ tags:javascript###问题的开始：
   };
 </script>
 
-  <title>  | Ryan724 </title>
+  <title> 标签: javascript,Node | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,7 +127,7 @@ tags:javascript###问题的开始：
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,133 +205,74 @@ tags:javascript###问题的开始：
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        javascript,Node
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2015/08/09/Node Debugger/" itemprop="url">
               
-                
+                <span itemprop="name">Node Debugger</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T11:00:11+08:00" content="2016-04-09">
-              2016-04-09
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2015-08-09T14:16:37+08:00"
+              content="2015-08-09" >
+          08-09
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <hr>
-<p>title:setTimeout与this<br>date:2016-04-09 14:16:37</p>
-<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>###问题的开始：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
-<p>###提问</p>
-<pre><code>－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
-</code></pre><p>###怎么考虑这个问题</p>
-<p>预测：<br></p>
-<pre><code>1. 是自己调用，可以访问上一个调用着
-2. 是顶级对象调用（global，window）
-3. 是最初父级对象调用
-</code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论</p>
-<p> setTimeout是顶级对象调用</p>
-
-      
-    </div>
-    
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/08/09/Node Debugger/" rel="next" title="Node Debugger">
-                <i class="fa fa-chevron-left"></i> Node Debugger
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/09/github md文档编写规范/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
+    
       
-    </div>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2015/07/10/npm link的研究/" itemprop="url">
+              
+                <span itemprop="name">Node Debugger</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2015-07-10T01:16:37+08:00"
+              content="2015-07-10" >
+          07-10
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
   </div>
+
+  
 
 
           </div>
@@ -358,10 +280,6 @@ tags:javascript###问题的开始：
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -381,17 +299,8 @@ tags:javascript###问题的开始：
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars3.githubusercontent.com/u/5319124?v=3&s=460"
@@ -436,17 +345,6 @@ tags:javascript###问题的开始：
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-javascript"><span class="nav-number">1.</span> <span class="nav-text">tags:javascript</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -549,10 +447,6 @@ tags:javascript###问题的开始：
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 

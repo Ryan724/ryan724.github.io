@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,Node," />
 
 
 
@@ -80,34 +80,43 @@
 
 
 
-<meta name="description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
+<meta name="description" content="每次和电脑直接的交互都是给电脑下达一定的指令，电脑根据指令调用执行相应任务。（待~~~~）
+##npm line 方式
+一. 操作流程
+我们在开发的目录下，编写一个最简单的node可执行文件a.js12#!/usr/bin/env nodeconsole.log(&apos;hello Ryan&apos;);
+
+
+#!/usr/bin/env node这句很重要，后面解释。
+
+建立package.json文件
+12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ryan724">
-<meta property="og:url" content="http://yoursite.com/2016/04/09/setTimeout与this/index.html">
+<meta property="og:title" content="Node Debugger">
+<meta property="og:url" content="http://yoursite.com/2015/07/10/npm link的研究/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
-<meta property="og:updated_time" content="2016-04-09T07:20:39.000Z">
+<meta property="og:description" content="每次和电脑直接的交互都是给电脑下达一定的指令，电脑根据指令调用执行相应任务。（待~~~~）
+##npm line 方式
+一. 操作流程
+我们在开发的目录下，编写一个最简单的node可执行文件a.js12#!/usr/bin/env nodeconsole.log(&apos;hello Ryan&apos;);
+
+
+#!/usr/bin/env node这句很重要，后面解释。
+
+建立package.json文件
+12">
+<meta property="og:updated_time" content="2016-04-09T07:22:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ryan724">
-<meta name="twitter:description" content="title:setTimeout与thisdate:2016-04-09 14:16:37
-tags:javascript###问题的开始：
-12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问
-－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问">
+<meta name="twitter:title" content="Node Debugger">
+<meta name="twitter:description" content="每次和电脑直接的交互都是给电脑下达一定的指令，电脑根据指令调用执行相应任务。（待~~~~）
+##npm line 方式
+一. 操作流程
+我们在开发的目录下，编写一个最简单的node可执行文件a.js12#!/usr/bin/env nodeconsole.log(&apos;hello Ryan&apos;);
+
+
+#!/usr/bin/env node这句很重要，后面解释。
+
+建立package.json文件
+12">
 
 
 
@@ -125,7 +134,7 @@ tags:javascript###问题的开始：
   };
 </script>
 
-  <title>  | Ryan724 </title>
+  <title> Node Debugger | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +254,7 @@ tags:javascript###问题的开始：
             
             
               
-                
+                Node Debugger
               
             
           </h1>
@@ -257,8 +266,8 @@ tags:javascript###问题的开始：
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T11:00:11+08:00" content="2016-04-09">
-              2016-04-09
+            <time itemprop="dateCreated" datetime="2015-07-10T01:16:37+08:00" content="2015-07-10">
+              2015-07-10
             </time>
           </span>
 
@@ -284,23 +293,51 @@ tags:javascript###问题的开始：
       
 
       
-        <hr>
-<p>title:setTimeout与this<br>date:2016-04-09 14:16:37</p>
-<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>###问题的开始：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
-<p>###提问</p>
-<pre><code>－ 这个是递归调用吗？
-－ 准确表达是：是fun自己调用自己吗？
-－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
-</code></pre><p>###怎么考虑这个问题</p>
-<p>预测：<br></p>
-<pre><code>1. 是自己调用，可以访问上一个调用着
-2. 是顶级对象调用（global，window）
-3. 是最初父级对象调用
-</code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论</p>
-<p> setTimeout是顶级对象调用</p>
+        <p>每次和电脑直接的交互都是给电脑下达一定的指令，电脑根据指令调用执行相应任务。<br>（待~~~~）</p>
+<p>##npm line 方式</p>
+<h3 id="一-操作流程"><a href="#一-操作流程" class="headerlink" title="一. 操作流程"></a>一. 操作流程</h3><ol>
+<li>我们在开发的目录下，编写一个最简单的node可执行文件<code>a.js</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'hello Ryan'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>#!/usr/bin/env node</code>这句很重要，后面解释。</p>
+<ol>
+<li><p>建立package.json文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"npm-link"</span>,</span><br><span class="line">    <span class="string">"bin"</span>:&#123;</span><br><span class="line">        <span class="string">"ryan"</span>:<span class="string">"a.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在该文件夹下执行<code>npm link</code></p>
+</li>
+<li><p>可在任意文件夹下运行<code>ryan</code></p>
+</li>
+</ol>
+<h3 id="二-问题就来了"><a href="#二-问题就来了" class="headerlink" title="二. 问题就来了"></a>二. 问题就来了</h3><blockquote>
+<ul>
+<li>npm link执行，发生了什么?</li>
+<li>命令行输入<code>ryan</code>,怎么调用的？</li>
+</ul>
+</blockquote>
+<p><strong>第一个问题</strong>  npm link执行，发生了什么?</p>
+<p>官方解释<a href="https://docs.npmjs.com/cli/link/" target="_blank" rel="external">点这里</a>;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ../dev/node-redis</span><br><span class="line">npm link</span><br></pre></td></tr></table></figure>
+<p>在开发的目录下执行<code>npm link</code>,会在npm全局的文件夹根据package.json的描述创建引用文件指向本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ../dev/node-bloggy</span><br><span class="line">npm link redis</span><br></pre></td></tr></table></figure></p>
+<p>在其他要用到<code>redis</code>的文件夹下执行<code>npm link redis</code>,该文件夹<br>下的node_modules文件夹夹的向redis所在文件的引用文件<br>npm link的源码文件中的注解说的相当明白：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// link with no args: symlink the folder to the global location</span></span><br><span class="line"><span class="comment">// link with package arg: symlink the global to the local</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>我在windows环境下相应开发文件夹下执行<code>npm link</code></p>
+<ol>
+<li><p>npm全局的文件夹<code>~\AppData\Roaming\npm</code>目录下多了两个文件：<code>ryan</code>,<code>ryan.cmd</code></p>
+<blockquote>
+<ul>
+<li><code>ryan</code>是shell编程的脚本</li>
+<li><code>ryan.cmd</code> dos编程的脚本</li>
+</ul>
+</blockquote>
+</li>
+<li><p>相应的在全局的node_moudules多一个npm-link的引用文件夹</p>
+</li>
+</ol>
+<p><strong>注：</strong> package.json如果不写name属性，会导致node_moudules文件直接是引用文件夹，所以<strong>name属性是必须的</strong>。</p>
+<p>问题就来了<strong>为什么生成ryan的文件的？而不是其他的？</strong><br>这就看npm link 命令都做了什么!<br>查看文件<code>..\nodejs\node_modules\npm\lib\link.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">link</span> (<span class="params">args, cb</span>) </span>&#123;</span><br><span class="line">	....</span><br><span class="line">  if (args.length) <span class="keyword">return</span> linkInstall(args, cb)</span><br><span class="line">  linkPkg(npm.prefix, cb)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linkInstall</span> (<span class="params">pkgs, cb</span>) </span>&#123;...&#125; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linkPkg</span> (<span class="params">folder, cb_</span>) </span>&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>linkInstall</code>：引用链接到<br><code>linkPkg</code>:<br>调用了bulid.js<br><code>#!/usr/bin/env node</code>这句注释什么作用？</p>
+<p><strong>第二个问题</strong>  命令行输入<code>ryan</code>,怎么调用的？<br>path</p>
 
       
     </div>
@@ -319,21 +356,23 @@ tags:javascript###问题的开始：
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javascript-Node/" rel="tag">#javascript,Node</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/09/Node Debugger/" rel="next" title="Node Debugger">
-                <i class="fa fa-chevron-left"></i> Node Debugger
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/github md文档编写规范/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/08/09/Node Debugger/" rel="prev" title="Node Debugger">
+                Node Debugger <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -443,7 +482,7 @@ tags:javascript###问题的开始：
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-javascript"><span class="nav-number">1.</span> <span class="nav-text">tags:javascript</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-操作流程"><span class="nav-number">1.</span> <span class="nav-text">一. 操作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-问题就来了"><span class="nav-number">2.</span> <span class="nav-text">二. 问题就来了</span></a></li></ol></div>
             
           </div>
         </section>
