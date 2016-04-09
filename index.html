@@ -272,7 +272,9 @@
       
         
           
-            <h1 id="github-md文档编写规范-文末有彩蛋"><a href="#github-md文档编写规范-文末有彩蛋" class="headerlink" title="github md文档编写规范(文末有彩蛋)"></a>github md文档编写规范(文末有彩蛋)</h1><p><em>前记：行路者，在意前方的终点，更在意当下路旁的风景</em></p>
+            <hr>
+<p>title:github md文档编写规范<br>date:2016-04-09 14:16:37</p>
+<h2 id="tags-github-markdown"><a href="#tags-github-markdown" class="headerlink" title="tags:github,markdown"></a>tags:github,markdown</h2><p><em>前记：行路者，在意前方的终点，更在意当下路旁的风景</em></p>
 <h1 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">大标题</span><br><span class="line">==============</span><br></pre></td></tr></table></figure>
 <h2 id="中标题"><a href="#中标题" class="headerlink" title="中标题"></a>中标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">中标题</span><br><span class="line">-----------------------</span><br></pre></td></tr></table></figure>
 <p>#小标题H1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#小标题H1</span><br></pre></td></tr></table></figure></p>
@@ -417,7 +419,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/09/ setTimeout与this/" itemprop="url">
+                <a class="post-title-link" href="/2016/04/09/JSON实例化三种方式/" itemprop="url">
                   未命名
                 </a>
               
@@ -460,15 +462,20 @@
       
         
           
-            <h1 id="setTimeout与this"><a href="#setTimeout与this" class="headerlink" title="setTimeout与this"></a>setTimeout与this</h1><p>###问题的开始：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure></p>
-<p>###提问<br>    － 这个是递归调用吗？<br>    － 准确表达是：是fun自己调用自己吗？<br>    － 或者：后执行的fun可以访问到前执行fun中的参数吗？</p>
-<p>###怎么考虑这个问题<br>预测：</p>
-<pre><code>1. 是自己调用，可以访问上一个调用着
-2. 是顶级对象调用（global，window）
-3. 是最初父级对象调用
-</code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论<br> setTimeout是顶级对象调用</p>
+            <hr>
+<p>title:JSON字符串转换的三种方式<br>date:2016-04-09 14:16:37</p>
+<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>json字符串</p>
+<p><code>{ &quot;prop&quot;: &quot;val&quot; }</code> 是个合法的JSON，<br><code>{ prop: &quot;val&quot; }</code> 和 <code>{ &#39;prop&#39;: &#39;val&#39; }</code> 是不合法的JSON</p>
+<p>##解析JSON的三种方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">eval</span>(<span class="string">"("</span>+ jsonStr+<span class="string">")"</span>) </span><br><span class="line"><span class="keyword">var</span> jsonObj = (<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonStr))();</span><br><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">JSON</span>.parse(jsonStr)</span><br></pre></td></tr></table></figure></p>
+<p>三种方式使用差异，性能差异</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr><td><em>方式</em></td><td><em>安全</em></td><td><em>效率</em></td><td><em>是否有合法性要求</em></td></tr></p>
+<p><tr><td> parse</td><td> 安全 </td><td> 高 </td><td> 有</td></tr></p>
+<p><tr><td> new Function</td><td> 不安全 </td><td> 低，不稳定 </td><td> 无</td></tr></p>
+<p><tr><td> eval </td><td> 不安全 </td><td> 低，不稳定 </td><td> 无</td></tr><br><br></p>
+<p>##安全性检验代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> jsonstr = <span class="string">'&#123;"data1":"hello","data2":++value&#125;'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">'('</span>+jsonstr+<span class="string">')'</span>)); <span class="comment">//此时value=2</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonstr))()); <span class="comment">//此时value=3</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(jsonstr)); <span class="comment">//报错</span></span><br></pre></td></tr></table></figure></p>
+<p>##效率检验代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">buildJson</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">'&#123;"aa":"aa",'</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">10000</span>;i++)&#123;</span><br><span class="line">		str +=<span class="string">'"aa'</span>+i+<span class="string">'":"aa",'</span></span><br><span class="line">	&#125;</span><br><span class="line">	str +=<span class="string">'"aaa":"aa"&#125;'</span></span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">useParse</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str =buildJson();</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	<span class="built_in">JSON</span>.parse(str);</span><br><span class="line">	<span class="keyword">var</span> parseTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	<span class="built_in">eval</span>(<span class="string">"("</span>+str+<span class="string">")"</span>);</span><br><span class="line">	<span class="keyword">var</span> evalTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	(<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + str))()</span><br><span class="line">	<span class="keyword">var</span> funTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"JSON.parse解析使用时间："</span>+parseTime,<span class="string">"eval解析使用时间："</span>+evalTime,<span class="string">"function解析使用时间："</span>+funTime)</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：9 eval解析使用时间：35 function解析使用时间：47</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：30 eval解析使用时间：142 function解析使用时间：121</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：16 eval解析使用时间：42 function解析使用时间：47</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：11 eval解析使用时间：32 function解析使用时间：19</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：5 eval解析使用时间：28 function解析使用时间：30</span></span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -518,7 +525,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/09/JSON实例化三种方式/" itemprop="url">
+                <a class="post-title-link" href="/2016/04/09/setTimeout与this/" itemprop="url">
                   未命名
                 </a>
               
@@ -561,15 +568,131 @@
       
         
           
-            <h1 id="setTimeout与this"><a href="#setTimeout与this" class="headerlink" title="setTimeout与this"></a>setTimeout与this</h1><p>###问题的开始：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure></p>
-<p>###提问<br>    － 这个是递归调用吗？<br>    － 准确表达是：是fun自己调用自己吗？<br>    － 或者：后执行的fun可以访问到前执行fun中的参数吗？</p>
-<p>###怎么考虑这个问题<br>预测：</p>
+            <hr>
+<p>title:setTimeout与this<br>date:2016-04-09 14:16:37</p>
+<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>###问题的开始：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
+<p>###提问</p>
+<pre><code>－ 这个是递归调用吗？
+－ 准确表达是：是fun自己调用自己吗？
+－ 或者：后执行的fun可以访问到前执行fun中的参数吗？
+</code></pre><p>###怎么考虑这个问题</p>
+<p>预测：<br></p>
 <pre><code>1. 是自己调用，可以访问上一个调用着
 2. 是顶级对象调用（global，window）
 3. 是最初父级对象调用
 </code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论<br> setTimeout是顶级对象调用</p>
+<p>###结论</p>
+<p> setTimeout是顶级对象调用</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/31/Node Debugger/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-31T10:13:25+08:00" content="2016-03-31">
+              2016-03-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title:Node Debugger<br>date:2015-08-09 14:16:37</p>
+<h2 id="tags-javascript-Node"><a href="#tags-javascript-Node" class="headerlink" title="tags:javascript,Node"></a>tags:javascript,Node</h2><p><a href="http://blog.csdn.net/haidaochen/article/details/8570186" target="_blank" rel="external">node 调试</a></p>
+<p>##一. 安装node-inspector  </p>
+<p>npm install -g node-inspector </p>
+<p>##二. 调试模式运行</p>
+<p>node –debug-brk app.js<br>默认端口5858 </p>
+<p>node –debug-brk[=3000] app.js<br>启动监听node-inspector</p>
+<p>node-inspector &amp;<br>修改端口</p>
+<p>node-inspector  –web-port=[port]</p>
+<p>##三. 进入调试页面</p>
+<p><a href="http://[ip" target="_blank" rel="external">http://[ip</a> address]:8080/debug?port=5858</p>
+<p>修改后自动重启</p>
+<p>npm install supervisor -g</p>
+<p>supervisor app.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//要监控的文件夹或js文件，默认为&apos;.&apos;</span><br><span class="line">-w|--watch &lt;watchItems&gt;</span><br><span class="line">//要忽略监控的文件夹或js文件  </span><br><span class="line">-i|--ignore &lt;ignoreItems&gt;</span><br><span class="line">//监控文件变化的时间间隔（周期），默认为Node.js内置的时间</span><br><span class="line">-p|--poll-interval &lt;milliseconds&gt;</span><br><span class="line">//要监控的文件扩展名，默认为&apos;node|js&apos;</span><br><span class="line">-e|--extensions &lt;extensions&gt;</span><br><span class="line">//要执行的主应用程序，默认为&apos;node&apos;</span><br><span class="line">-x|--exec &lt;executable&gt;</span><br><span class="line">//开启debug模式（用--debug flag来启动node）</span><br><span class="line">--debug</span><br><span class="line">//安静模式，不显示DEBUG信息</span><br><span class="line">-q|--quiet</span><br></pre></td></tr></table></figure></p>
+<p>Grunt 压缩<br><a href="http://www.cnblogs.com/artwl/archive/2013/11/29/3449303.html" target="_blank" rel="external">uglify</a><br><a href="http://segmentfault.com/a/1190000000343005" target="_blank" rel="external">enter link description here</a></p>
 
           
         
@@ -662,10 +785,150 @@
       
         
           
-            <p>#js 模拟弹簧运动</p>
-<hr>
-<p>速度图</p>
+            <hr>
+<p>title:js 模拟弹簧运动<br>date:2016-04-09 14:16:37</p>
+<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>###速度图</p>
 <p><img src="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png" alt="Alt text"></p>
+<p>###关键代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">   (<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">x,v</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> result= (<span class="function"><span class="keyword">function</span> <span class="title">stepper</span>(<span class="params">x, v</span>) </span>&#123;</span><br><span class="line">               <span class="keyword">var</span> frameRate =<span class="number">1</span>/<span class="number">60</span>, destX = <span class="number">0</span>, k =<span class="number">100</span>, b = <span class="number">20</span>,errorMargin = <span class="number">0.00001</span>;</span><br><span class="line">                <span class="comment">// 弹簧拉力 =  弹性系数 * 拉伸距离</span></span><br><span class="line">                <span class="keyword">var</span> Fspring = -k * (x - destX);</span><br><span class="line">                <span class="comment">// Fdamper = (cpsv^2)/2  </span></span><br><span class="line">                <span class="comment">// 简化  </span></span><br><span class="line">                <span class="comment">// 阻力 = 阻力系数* 阻力系数</span></span><br><span class="line">                <span class="keyword">var</span> Fdamper = -b * v;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">//F=ma  m忽略</span></span><br><span class="line">                <span class="keyword">var</span> a = Fspring + Fdamper;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">// if (window.hackOn) frameRate = 1 / 300;</span></span><br><span class="line">          </span><br><span class="line">                <span class="keyword">var</span> newV = v + a * frameRate;</span><br><span class="line">                <span class="keyword">var</span> newX = x + newV * frameRate;</span><br><span class="line">          </span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(newV - v) &lt; errorMargin &amp;&amp; <span class="built_in">Math</span>.abs(newX - x) &lt; errorMargin) &#123;</span><br><span class="line">                  <span class="keyword">return</span> [destX, <span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> [newX, newV];</span><br><span class="line">              &#125;)(x,v)</span><br><span class="line">      <span class="keyword">if</span>(result[<span class="number">0</span>]&gt;<span class="number">0.1</span>)&#123;</span><br><span class="line">        step(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br><span class="line">      &#125;</span><br><span class="line">&#125;)(<span class="number">300</span>,<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/31/npm link的研究/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-31T10:13:25+08:00" content="2016-03-31">
+              2016-03-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title:Node Debugger<br>date:2015-07-10 01:16:37</p>
+<h2 id="tags-javascript-Node"><a href="#tags-javascript-Node" class="headerlink" title="tags:javascript,Node"></a>tags:javascript,Node</h2><p>每次和电脑直接的交互都是给电脑下达一定的指令，电脑根据指令调用执行相应任务。<br>（待~~~~）</p>
+<p>##npm line 方式</p>
+<h3 id="一-操作流程"><a href="#一-操作流程" class="headerlink" title="一. 操作流程"></a>一. 操作流程</h3><ol>
+<li>我们在开发的目录下，编写一个最简单的node可执行文件<code>a.js</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'hello Ryan'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>#!/usr/bin/env node</code>这句很重要，后面解释。</p>
+<ol>
+<li><p>建立package.json文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"npm-link"</span>,</span><br><span class="line">    <span class="string">"bin"</span>:&#123;</span><br><span class="line">        <span class="string">"ryan"</span>:<span class="string">"a.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在该文件夹下执行<code>npm link</code></p>
+</li>
+<li><p>可在任意文件夹下运行<code>ryan</code></p>
+</li>
+</ol>
+<h3 id="二-问题就来了"><a href="#二-问题就来了" class="headerlink" title="二. 问题就来了"></a>二. 问题就来了</h3><blockquote>
+<ul>
+<li>npm link执行，发生了什么?</li>
+<li>命令行输入<code>ryan</code>,怎么调用的？</li>
+</ul>
+</blockquote>
+<p><strong>第一个问题</strong>  npm link执行，发生了什么?</p>
+<p>官方解释<a href="https://docs.npmjs.com/cli/link/" target="_blank" rel="external">点这里</a>;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ../dev/node-redis</span><br><span class="line">npm link</span><br></pre></td></tr></table></figure>
+<p>在开发的目录下执行<code>npm link</code>,会在npm全局的文件夹根据package.json的描述创建引用文件指向本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ../dev/node-bloggy</span><br><span class="line">npm link redis</span><br></pre></td></tr></table></figure></p>
+<p>在其他要用到<code>redis</code>的文件夹下执行<code>npm link redis</code>,该文件夹<br>下的node_modules文件夹夹的向redis所在文件的引用文件<br>npm link的源码文件中的注解说的相当明白：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// link with no args: symlink the folder to the global location</span></span><br><span class="line"><span class="comment">// link with package arg: symlink the global to the local</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>我在windows环境下相应开发文件夹下执行<code>npm link</code></p>
+<ol>
+<li><p>npm全局的文件夹<code>~\AppData\Roaming\npm</code>目录下多了两个文件：<code>ryan</code>,<code>ryan.cmd</code></p>
+<blockquote>
+<ul>
+<li><code>ryan</code>是shell编程的脚本</li>
+<li><code>ryan.cmd</code> dos编程的脚本</li>
+</ul>
+</blockquote>
+</li>
+<li><p>相应的在全局的node_moudules多一个npm-link的引用文件夹</p>
+</li>
+</ol>
+<p><strong>注：</strong> package.json如果不写name属性，会导致node_moudules文件直接是引用文件夹，所以<strong>name属性是必须的</strong>。</p>
+<p>问题就来了<strong>为什么生成ryan的文件的？而不是其他的？</strong><br>这就看npm link 命令都做了什么!<br>查看文件<code>..\nodejs\node_modules\npm\lib\link.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">link</span> (<span class="params">args, cb</span>) </span>&#123;</span><br><span class="line">	....</span><br><span class="line">  if (args.length) <span class="keyword">return</span> linkInstall(args, cb)</span><br><span class="line">  linkPkg(npm.prefix, cb)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linkInstall</span> (<span class="params">pkgs, cb</span>) </span>&#123;...&#125; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linkPkg</span> (<span class="params">folder, cb_</span>) </span>&#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>linkInstall</code>：引用链接到<br><code>linkPkg</code>:<br>调用了bulid.js<br><code>#!/usr/bin/env node</code>这句注释什么作用？</p>
+<p><strong>第二个问题</strong>  命令行输入<code>ryan</code>,怎么调用的？<br>path</p>
 
           
         
@@ -735,7 +998,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

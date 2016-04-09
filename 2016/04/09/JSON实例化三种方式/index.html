@@ -80,25 +80,25 @@
 
 
 
-<meta name="description" content="setTimeout与this###问题的开始：12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问    － 这个是递归调用吗？    － 准确表达是：是fun自己调用自己吗？    － 或者：后执行的fun可以访问到前执行fun中的参数吗？
-###怎么考虑这个问题预测：
-1. 是自己调用，可">
+<meta name="description" content="title:JSON字符串转换的三种方式date:2016-04-09 14:16:37
+tags:javascriptjson字符串
+{ &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
+##解析JSON的三种">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ryan724">
 <meta property="og:url" content="http://yoursite.com/2016/04/09/JSON实例化三种方式/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="setTimeout与this###问题的开始：12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问    － 这个是递归调用吗？    － 准确表达是：是fun自己调用自己吗？    － 或者：后执行的fun可以访问到前执行fun中的参数吗？
-###怎么考虑这个问题预测：
-1. 是自己调用，可">
-<meta property="og:updated_time" content="2016-04-09T03:00:11.000Z">
+<meta property="og:description" content="title:JSON字符串转换的三种方式date:2016-04-09 14:16:37
+tags:javascriptjson字符串
+{ &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
+##解析JSON的三种">
+<meta property="og:updated_time" content="2016-04-09T07:20:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ryan724">
-<meta name="twitter:description" content="setTimeout与this###问题的开始：12345function fun()&amp;#123;	doSomething();	setTimeout(func,10)&amp;#125;fun();
-###提问    － 这个是递归调用吗？    － 准确表达是：是fun自己调用自己吗？    － 或者：后执行的fun可以访问到前执行fun中的参数吗？
-###怎么考虑这个问题预测：
-1. 是自己调用，可">
+<meta name="twitter:description" content="title:JSON字符串转换的三种方式date:2016-04-09 14:16:37
+tags:javascriptjson字符串
+{ &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
+##解析JSON的三种">
 
 
 
@@ -275,15 +275,20 @@
       
 
       
-        <h1 id="setTimeout与this"><a href="#setTimeout与this" class="headerlink" title="setTimeout与this"></a>setTimeout与this</h1><p>###问题的开始：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	doSomething();</span><br><span class="line">	setTimeout(func,<span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure></p>
-<p>###提问<br>    － 这个是递归调用吗？<br>    － 准确表达是：是fun自己调用自己吗？<br>    － 或者：后执行的fun可以访问到前执行fun中的参数吗？</p>
-<p>###怎么考虑这个问题<br>预测：</p>
-<pre><code>1. 是自己调用，可以访问上一个调用着
-2. 是顶级对象调用（global，window）
-3. 是最初父级对象调用
-</code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论<br> setTimeout是顶级对象调用</p>
+        <hr>
+<p>title:JSON字符串转换的三种方式<br>date:2016-04-09 14:16:37</p>
+<h2 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:javascript"></a>tags:javascript</h2><p>json字符串</p>
+<p><code>{ &quot;prop&quot;: &quot;val&quot; }</code> 是个合法的JSON，<br><code>{ prop: &quot;val&quot; }</code> 和 <code>{ &#39;prop&#39;: &#39;val&#39; }</code> 是不合法的JSON</p>
+<p>##解析JSON的三种方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">eval</span>(<span class="string">"("</span>+ jsonStr+<span class="string">")"</span>) </span><br><span class="line"><span class="keyword">var</span> jsonObj = (<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonStr))();</span><br><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">JSON</span>.parse(jsonStr)</span><br></pre></td></tr></table></figure></p>
+<p>三种方式使用差异，性能差异</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr><td><em>方式</em></td><td><em>安全</em></td><td><em>效率</em></td><td><em>是否有合法性要求</em></td></tr></p>
+<p><tr><td> parse</td><td> 安全 </td><td> 高 </td><td> 有</td></tr></p>
+<p><tr><td> new Function</td><td> 不安全 </td><td> 低，不稳定 </td><td> 无</td></tr></p>
+<p><tr><td> eval </td><td> 不安全 </td><td> 低，不稳定 </td><td> 无</td></tr><br><br></p>
+<p>##安全性检验代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> jsonstr = <span class="string">'&#123;"data1":"hello","data2":++value&#125;'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">'('</span>+jsonstr+<span class="string">')'</span>)); <span class="comment">//此时value=2</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonstr))()); <span class="comment">//此时value=3</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(jsonstr)); <span class="comment">//报错</span></span><br></pre></td></tr></table></figure></p>
+<p>##效率检验代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">buildJson</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">'&#123;"aa":"aa",'</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">10000</span>;i++)&#123;</span><br><span class="line">		str +=<span class="string">'"aa'</span>+i+<span class="string">'":"aa",'</span></span><br><span class="line">	&#125;</span><br><span class="line">	str +=<span class="string">'"aaa":"aa"&#125;'</span></span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">useParse</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str =buildJson();</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	<span class="built_in">JSON</span>.parse(str);</span><br><span class="line">	<span class="keyword">var</span> parseTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	<span class="built_in">eval</span>(<span class="string">"("</span>+str+<span class="string">")"</span>);</span><br><span class="line">	<span class="keyword">var</span> evalTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	(<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + str))()</span><br><span class="line">	<span class="keyword">var</span> funTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"JSON.parse解析使用时间："</span>+parseTime,<span class="string">"eval解析使用时间："</span>+evalTime,<span class="string">"function解析使用时间："</span>+funTime)</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：9 eval解析使用时间：35 function解析使用时间：47</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：30 eval解析使用时间：142 function解析使用时间：121</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：16 eval解析使用时间：42 function解析使用时间：47</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：11 eval解析使用时间：32 function解析使用时间：19</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：5 eval解析使用时间：28 function解析使用时间：30</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -307,7 +312,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/31/js 模拟弹簧运动/" rel="next" title="">
+              <a href="/2016/04/09/setTimeout与this/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -315,7 +320,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/ setTimeout与this/" rel="prev" title="">
+              <a href="/2016/04/09/github md文档编写规范/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -385,7 +390,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -419,7 +424,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#setTimeout与this"><span class="nav-number">1.</span> <span class="nav-text">setTimeout与this</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-javascript"><span class="nav-number">1.</span> <span class="nav-text">tags:javascript</span></a></li></ol></div>
             
           </div>
         </section>
