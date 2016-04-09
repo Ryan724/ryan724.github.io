@@ -80,31 +80,21 @@
 
 
 
-<meta name="description" content="node 调试
-一. 安装node-inspectornpm install -g node-inspector 
-二. 调试模式运行node –debug-brk app.js默认端口5858 
-node –debug-brk[=3000] app.js启动监听node-inspector
-node-inspector &amp;amp;修改端口
-node-inspector  –web-port=[p">
+<meta name="description" content="速度图
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node Debugger">
-<meta property="og:url" content="http://yoursite.com/2015/08/09/Node Debugger/index.html">
+<meta property="og:title" content="js 模拟弹簧运动">
+<meta property="og:url" content="http://yoursite.com/2016/03/22/js 模拟弹簧运动/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="node 调试
-一. 安装node-inspectornpm install -g node-inspector 
-二. 调试模式运行node –debug-brk app.js默认端口5858 
-node –debug-brk[=3000] app.js启动监听node-inspector
-node-inspector &amp;amp;修改端口
-node-inspector  –web-port=[p">
-<meta property="og:updated_time" content="2016-04-09T09:43:41.000Z">
+<meta property="og:description" content="速度图
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargi">
+<meta property="og:image" content="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png">
+<meta property="og:updated_time" content="2016-04-09T10:26:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node Debugger">
-<meta name="twitter:description" content="node 调试
-一. 安装node-inspectornpm install -g node-inspector 
-二. 调试模式运行node –debug-brk app.js默认端口5858 
-node –debug-brk[=3000] app.js启动监听node-inspector
-node-inspector &amp;amp;修改端口
-node-inspector  –web-port=[p">
+<meta name="twitter:title" content="js 模拟弹簧运动">
+<meta name="twitter:description" content="速度图
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&amp;#123;     var result= (function stepper(x, v) &amp;#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargi">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png">
 
 
 
@@ -122,7 +112,7 @@ node-inspector  –web-port=[p">
   };
 </script>
 
-  <title> Node Debugger | Ryan724 </title>
+  <title> js 模拟弹簧运动 | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +272,7 @@ node-inspector  –web-port=[p">
             
             
               
-                Node Debugger
+                js 模拟弹簧运动
               
             
           </h1>
@@ -294,8 +284,8 @@ node-inspector  –web-port=[p">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-09T14:16:37+08:00" content="2015-08-09">
-              2015-08-09
+            <time itemprop="dateCreated" datetime="2016-03-22T14:16:37+08:00" content="2016-03-22">
+              2016-03-22
             </time>
           </span>
 
@@ -308,8 +298,8 @@ node-inspector  –web-port=[p">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -324,8 +314,8 @@ node-inspector  –web-port=[p">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/08/09/Node Debugger/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/09/Node Debugger/" itemprop="commentsCount"></span>
+                <a href="/2016/03/22/js 模拟弹簧运动/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/js 模拟弹簧运动/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -347,18 +337,8 @@ node-inspector  –web-port=[p">
       
 
       
-        <p><a href="http://blog.csdn.net/haidaochen/article/details/8570186" target="_blank" rel="external">node 调试</a></p>
-<h2 id="一-安装node-inspector"><a href="#一-安装node-inspector" class="headerlink" title="一. 安装node-inspector"></a>一. 安装node-inspector</h2><p>npm install -g node-inspector </p>
-<h2 id="二-调试模式运行"><a href="#二-调试模式运行" class="headerlink" title="二. 调试模式运行"></a>二. 调试模式运行</h2><p>node –debug-brk app.js<br>默认端口5858 </p>
-<p>node –debug-brk[=3000] app.js<br>启动监听node-inspector</p>
-<p>node-inspector &amp;<br>修改端口</p>
-<p>node-inspector  –web-port=[port]</p>
-<h2 id="三-进入调试页面"><a href="#三-进入调试页面" class="headerlink" title="三. 进入调试页面"></a>三. 进入调试页面</h2><p><a href="http://[ip" target="_blank" rel="external">http://[ip</a> address]:8080/debug?port=5858</p>
-<p>修改后自动重启</p>
-<p>npm install supervisor -g</p>
-<p>supervisor app.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//要监控的文件夹或js文件，默认为&apos;.&apos;</span><br><span class="line">-w|--watch &lt;watchItems&gt;</span><br><span class="line">//要忽略监控的文件夹或js文件  </span><br><span class="line">-i|--ignore &lt;ignoreItems&gt;</span><br><span class="line">//监控文件变化的时间间隔（周期），默认为Node.js内置的时间</span><br><span class="line">-p|--poll-interval &lt;milliseconds&gt;</span><br><span class="line">//要监控的文件扩展名，默认为&apos;node|js&apos;</span><br><span class="line">-e|--extensions &lt;extensions&gt;</span><br><span class="line">//要执行的主应用程序，默认为&apos;node&apos;</span><br><span class="line">-x|--exec &lt;executable&gt;</span><br><span class="line">//开启debug模式（用--debug flag来启动node）</span><br><span class="line">--debug</span><br><span class="line">//安静模式，不显示DEBUG信息</span><br><span class="line">-q|--quiet</span><br></pre></td></tr></table></figure></p>
-<p>Grunt 压缩<br><a href="http://www.cnblogs.com/artwl/archive/2013/11/29/3449303.html" target="_blank" rel="external">uglify</a><br><a href="http://segmentfault.com/a/1190000000343005" target="_blank" rel="external">enter link description here</a></p>
-
+        <h3 id="速度图"><a href="#速度图" class="headerlink" title="速度图"></a>速度图</h3><p><img src="https://raw.githubusercontent.com/Ryan724/Ryan-blog/master/image/spring.png" alt="Alt text"></p>
+<h3 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">   (<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">x,v</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> result= (<span class="function"><span class="keyword">function</span> <span class="title">stepper</span>(<span class="params">x, v</span>) </span>&#123;</span><br><span class="line">               <span class="keyword">var</span> frameRate =<span class="number">1</span>/<span class="number">60</span>, destX = <span class="number">0</span>, k =<span class="number">100</span>, b = <span class="number">20</span>,errorMargin = <span class="number">0.00001</span>;</span><br><span class="line">                <span class="comment">// 弹簧拉力 =  弹性系数 * 拉伸距离</span></span><br><span class="line">                <span class="keyword">var</span> Fspring = -k * (x - destX);</span><br><span class="line">                <span class="comment">// Fdamper = (cpsv^2)/2  </span></span><br><span class="line">                <span class="comment">// 简化  </span></span><br><span class="line">                <span class="comment">// 阻力 = 阻力系数* 阻力系数</span></span><br><span class="line">                <span class="keyword">var</span> Fdamper = -b * v;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">//F=ma  m忽略</span></span><br><span class="line">                <span class="keyword">var</span> a = Fspring + Fdamper;</span><br><span class="line">          </span><br><span class="line">                <span class="comment">// if (window.hackOn) frameRate = 1 / 300;</span></span><br><span class="line">          </span><br><span class="line">                <span class="keyword">var</span> newV = v + a * frameRate;</span><br><span class="line">                <span class="keyword">var</span> newX = x + newV * frameRate;</span><br><span class="line">          </span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(newV - v) &lt; errorMargin &amp;&amp; <span class="built_in">Math</span>.abs(newX - x) &lt; errorMargin) &#123;</span><br><span class="line">                  <span class="keyword">return</span> [destX, <span class="number">0</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> [newX, newV];</span><br><span class="line">              &#125;)(x,v)</span><br><span class="line">      <span class="keyword">if</span>(result[<span class="number">0</span>]&gt;<span class="number">0.1</span>)&#123;</span><br><span class="line">        step(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br><span class="line">      &#125;</span><br><span class="line">&#125;)(<span class="number">300</span>,<span class="number">60</span>)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -381,17 +361,13 @@ node-inspector  –web-port=[p">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/10/npm-link的探究/" rel="next" title="npm link的探究">
-                <i class="fa fa-chevron-left"></i> npm link的探究
+              <a href="/2016/03/09/github-md文档编写规范/" rel="next" title="github md文档编写规范">
+                <i class="fa fa-chevron-left"></i> github md文档编写规范
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/29/setTimeout与this/" rel="prev" title="setTimeout与this">
-                setTimeout与this <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -406,10 +382,10 @@ node-inspector  –web-port=[p">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/09/Node Debugger/"
-     data-title="Node Debugger"
+        <div class="ds-share flat" data-thread-key="2016/03/22/js 模拟弹簧运动/"
+     data-title="js 模拟弹簧运动"
      data-content=""
-     data-url="http://yoursite.com/2015/08/09/Node Debugger/">
+     data-url="http://yoursite.com/2016/03/22/js 模拟弹簧运动/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -436,8 +412,8 @@ node-inspector  –web-port=[p">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/08/09/Node Debugger/"
-           data-title="Node Debugger" data-url="http://yoursite.com/2015/08/09/Node Debugger/">
+      <div class="ds-thread" data-thread-key="2016/03/22/js 模拟弹簧运动/"
+           data-title="js 模拟弹簧运动" data-url="http://yoursite.com/2016/03/22/js 模拟弹簧运动/">
       </div>
     
   </div>
@@ -561,7 +537,7 @@ node-inspector  –web-port=[p">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-安装node-inspector"><span class="nav-number">1.</span> <span class="nav-text">一. 安装node-inspector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-调试模式运行"><span class="nav-number">2.</span> <span class="nav-text">二. 调试模式运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-进入调试页面"><span class="nav-number">3.</span> <span class="nav-text">三. 进入调试页面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#速度图"><span class="nav-number">1.</span> <span class="nav-text">速度图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键代码"><span class="nav-number">2.</span> <span class="nav-text">关键代码</span></a></li></ol></div>
             
           </div>
         </section>
