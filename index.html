@@ -438,7 +438,18 @@ Computer
 
 
 Phone
-12 U
+12 USD
+12
+
+
+Pipe
+1 USD
+234
+
+
+
+12345| Item      |    Value | Qty  || :-------- | --------:| :--: || Computer  | 1600 USD |  5   || Phone     |   12 USD |  12  || Pipe      |    1 USD | 234  |
+当行文本输入两个tab,然
           ...
 
           <div class="post-more-link text-center">
@@ -563,7 +574,7 @@ Phone
         
           
           速度图
-关键代码123456789101112131415161718192021222324252627   (function step(x,v)&#123;     var result= (function stepper(x, v) &#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargin = 0.00001;                // 弹簧拉力 =  弹性系数 * 拉伸距离                var Fspring = -k * (x - destX);   
+关键代码123456789101112131415161718192021222324252627   (function step(x,v)&#123;     var result= (function stepper(x, v) &#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargin = 0.00001;                // 弹簧拉力 =  弹性系数 * 拉伸距离                var Fspring = -k * (x - destX);                // Fdamper = (cpsv^2)/2                  // 简化                  // 阻力 = 阻力系数* 阻力系数                var Fdamper = -b * v;                          //F=ma  m忽略                var a = Fspring
           ...
 
           <div class="post-more-link text-center">
@@ -699,8 +710,11 @@ Phone
 2. 是顶级对象调用（global，window）
 3. 是最初父级对象调用
 关注点始终在调用，我们通过this就可以观察，this是方法的持有者
-123456789function obj() &#123;	this.fn
-          ...
+123456789function obj() &#123;	this.fn = function() &#123;		alert("ok");		console.log(this);		setTimeout(this.fn, 1000); //直接使用this引用当前对象  	&#125;&#125;var o = new obj();o.fn();
+###结论
+ setTimeout是顶级对象调用
+
+          
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/02/29/setTimeout与this/#more" rel="contents">
@@ -832,7 +846,7 @@ node-inspector  –web-port=[port]
 三. 进入调试页面http://[ip address]:8080/debug?port=5858
 修改后自动重启
 npm install supervisor -g
-supervisor 
+supervisor app.js1234567891011121314//要监控的文件夹或js文件，默认为&apos;.&apos;-w|--watch &lt;watchItems&gt;//要忽略监控的文件夹或js文件  -i|--ignore &lt;ignoreItems&gt;//监控文件变化的时间间隔（周期），默认为Node.js内置的时间-p|--poll-interval &lt;millisecon
           ...
 
           <div class="post-more-link text-center">
@@ -967,6 +981,20 @@ npm line 方式一. 操作流程
 123456&#123;    "name":"npm-link",    "bin":&#123;        "ryan":"a.js"    &#125;&#125;
 
 在该文件夹下执行npm link
+
+可在任意文件夹下运行ryan
+
+
+二. 问题就来了
+
+npm link执行，发生了什么?
+命令行输入ryan,怎么调用的？
+
+
+第一个问题  npm link执行，发生了什么?
+官方解释点这里;
+12cd ../dev/node-redisnpm link
+在开发的目录下执行npm link,会在npm全局的文件夹根据package.json的描述创建引用文件指向本地12cd ../dev/n
           ...
 
           <div class="post-more-link text-center">
@@ -1097,7 +1125,10 @@ npm line 方式一. 操作流程
 
 
 方式安全效率是否有合法性要求
- p
+ parse 安全  高  有
+ new Function 不安全  低，不稳定  无
+ eval  不安全  低，不稳定  无
+安全性检验代码12345var value = 1;var jsonstr = '&#123;"data1":"hello","data2":++value&#125;';console.log(eval('('+jsonstr+')')); //此时value=2cons
           ...
 
           <div class="post-more-link text-center">
