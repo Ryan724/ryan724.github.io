@@ -88,7 +88,7 @@
 <meta property="og:description">
 <meta property="og:image" content="http://www.mathworks.com/cmsimages/63256_wl_91967v00gpu_fig1_wl.jpg">
 <meta property="og:image" content="http://www.ofweek.com/Upload/plainimages/flora/46/403.jpg">
-<meta property="og:updated_time" content="2016-05-23T10:46:52.000Z">
+<meta property="og:updated_time" content="2016-05-23T10:52:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="性能优化历程（1）">
 <meta name="twitter:description">
@@ -294,29 +294,29 @@
 <thead>
 <tr>
 <th style="text-align:left">props</th>
-<th style="text-align:right">Cpu</th>
+<th style="text-align:center">Cpu</th>
 <th style="text-align:center">Gpu</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">核</td>
-<td style="text-align:right">1&lt;n&lt;10</td>
+<td style="text-align:center">1&lt;n&lt;10</td>
 <td style="text-align:center">n&gt;100</td>
 </tr>
 <tr>
 <td style="text-align:left">通用性</td>
-<td style="text-align:right">任何计算</td>
+<td style="text-align:center">任何计算</td>
 <td style="text-align:center">图像处理，海量数值处理（几种）</td>
 </tr>
 <tr>
 <td style="text-align:left">每个核的cache</td>
-<td style="text-align:right">大</td>
+<td style="text-align:center">大</td>
 <td style="text-align:center">小</td>
 </tr>
 <tr>
 <td style="text-align:left">float处理能力</td>
-<td style="text-align:right">强</td>
+<td style="text-align:center">强</td>
 <td style="text-align:center">弱</td>
 </tr>
 </tbody>
@@ -331,8 +331,8 @@
 <h4 id="层创建标准"><a href="#层创建标准" class="headerlink" title="层创建标准"></a>层创建标准</h4><p>什么情况下能使元素获得自己的层？虽然 Chrome 的启发式方法(heuristic)随着时间在不断发展进步，但是从目前来说，满足以下任意情况便会创建层：</p>
 <ul>
 <li>3D 或透视变换(perspective transform) CSS 属性</li>
-<li>使用加速视频解码的 <video> 元素</video></li>
-<li>拥有 3D (WebGL) 上下文或加速的 2D 上下文的 <canvas> 元素</canvas></li>
+<li>使用加速视频解码的 <code>&lt;video&gt;</code>元素</li>
+<li>拥有 3D (WebGL) 上下文或加速的 2D 上下文的 <code>&lt;canvas&gt;</code> 元素</li>
 <li>混合插件(如 Flash)</li>
 <li>对自己的 opacity 做 CSS 动画或使用一个动画变换的元素</li>
 <li>拥有加速 CSS 过滤器的元素</li>
