@@ -239,6 +239,114 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/23/性能优化历程（2）/" itemprop="url">
+                  性能优化历程（2）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T17:29:36+08:00" content="2016-05-23">
+              2016-05-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/性能优化历程（2）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/性能优化历程（2）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          结论渲染流程：script   —–&gt;   layout —–&gt; paint —–&gt;  composite
+计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
+重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多
+
+          
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/23/性能优化历程（2）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/22/性能优化历程（1）/" itemprop="url">
                   性能优化历程（1）
                 </a>
@@ -288,44 +396,7 @@
 
       
         
-          
-          硬件加速：把平常会交给cpu的计算交给gpu来计算；gpu计算特性是：同时处理大量重复性简易计算；
-CPU擅长的是像操作系统、系统软件和通用应用程序这类拥有复杂指令调度、循环、分支、逻辑判断以及执行等的程序任务。它的并行优势是程序执行层面的，程序逻辑的复杂度也限定了程序执行的指令并行性，上百个并行程序执行的线程基本看不到;GPU擅长的是图形类的或者是非图形类的高度并行数值计算，GPU可以容纳上千个没有逻辑关系的数值计算线程，它的优势是无逻辑关系数据的并行计算。
-
-
-
-props
-Cpu
-Gpu
-
-
-
-
-核
-1&lt;n&lt;10
-n&gt;100
-
-
-通用性
-任何计算
-图像处理，海量数值处理（几种）
-
-
-每个核的cache
-大
-小
-
-
-float处理能力
-强
-弱
-
-
-
-css当中的硬件加速;gpu可以存储一定数量的纹理（一个矩形像素点集合），并高效的操作这些纹理（比如进行特定的移动，缩放，旋转）；浏览器不会在每一帧都会知一次，而是声称dom元素的快找，作为gpu纹理（也叫做层）存储起来，之后浏览器只需要告诉gpu去转换指定的纹理来实现dom元素的动画效果；
-cpu和gpu的总线太宽不
-          ...
-
+          <p><img src="http://www.mathworks.com/cmsimages/63256_wl_91967v00gpu_fig1_wl.jpg" alt="GPU和cpu">;</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/22/性能优化历程（1）/#more" rel="contents">
               阅读全文 &raquo;
@@ -1478,7 +1549,7 @@ npm link执行，发生了什么?
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
