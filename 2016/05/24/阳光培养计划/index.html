@@ -80,22 +80,18 @@
 
 
 
-<meta name="description" content="json字符串
-{ &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
-##解析JSON的三种方式123var jsonObj = eval(&quot;(&quot;+ jsonStr+&quot;)&quot;) var jsonObj = (new">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSON字符串转换的三种方式">
-<meta property="og:url" content="http://yoursite.com/2015/04/09/JSON实例化三种方式/index.html">
+<meta property="og:title" content="阳光培养计划">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/阳光培养计划/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="json字符串
-{ &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
-##解析JSON的三种方式123var jsonObj = eval(&quot;(&quot;+ jsonStr+&quot;)&quot;) var jsonObj = (new">
-<meta property="og:updated_time" content="2016-04-09T10:26:55.000Z">
+<meta property="og:description">
+<meta property="og:image" content="http://www.hotel-r.net/im/hotel/lv/sunny-18.jpg">
+<meta property="og:updated_time" content="2016-05-24T15:56:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSON字符串转换的三种方式">
-<meta name="twitter:description" content="json字符串
-{ &amp;quot;prop&amp;quot;: &amp;quot;val&amp;quot; } 是个合法的JSON，{ prop: &amp;quot;val&amp;quot; } 和 { &amp;#39;prop&amp;#39;: &amp;#39;val&amp;#39; } 是不合法的JSON
-##解析JSON的三种方式123var jsonObj = eval(&quot;(&quot;+ jsonStr+&quot;)&quot;) var jsonObj = (new">
+<meta name="twitter:title" content="阳光培养计划">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://www.hotel-r.net/im/hotel/lv/sunny-18.jpg">
 
 
 
@@ -113,7 +109,7 @@
   };
 </script>
 
-  <title> JSON字符串转换的三种方式 | Ryan724 </title>
+  <title> 阳光培养计划 | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +239,7 @@
             
             
               
-                JSON字符串转换的三种方式
+                阳光培养计划
               
             
           </h1>
@@ -255,38 +251,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-09T14:16:37+08:00" content="2015-04-09">
-              2015-04-09
+            <time itemprop="dateCreated" datetime="2016-05-24T22:06:15+08:00" content="2016-05-24">
+              2016-05-24
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/04/09/JSON实例化三种方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/09/JSON实例化三种方式/" itemprop="commentsCount"></span>
+                <a href="/2016/05/24/阳光培养计划/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/阳光培养计划/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,18 +285,34 @@
       
 
       
-        <p>json字符串</p>
-<p><code>{ &quot;prop&quot;: &quot;val&quot; }</code> 是个合法的JSON，<br><code>{ prop: &quot;val&quot; }</code> 和 <code>{ &#39;prop&#39;: &#39;val&#39; }</code> 是不合法的JSON</p>
-<p>##解析JSON的三种方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">eval</span>(<span class="string">"("</span>+ jsonStr+<span class="string">")"</span>) </span><br><span class="line"><span class="keyword">var</span> jsonObj = (<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonStr))();</span><br><span class="line"><span class="keyword">var</span> jsonObj = <span class="built_in">JSON</span>.parse(jsonStr)</span><br></pre></td></tr></table></figure></p>
-<p>三种方式使用差异，性能差异</p>
-<p><table></table></p>
-<p><tbody></tbody></p>
-<p><tr><td><em>方式</em></td><td><em>安全</em></td><td><em>效率</em></td><td><em>是否有合法性要求</em></td></tr></p>
-<p><tr><td> parse</td><td> 安全 </td><td> 高 </td><td> 有</td></tr></p>
-<p><tr><td> new Function</td><td> 不安全 </td><td> 低，不稳定 </td><td> 无</td></tr></p>
-<p><tr><td> eval </td><td> 不安全 </td><td> 低，不稳定 </td><td> 无</td></tr><br><br></p>
-<h2 id="安全性检验代码"><a href="#安全性检验代码" class="headerlink" title="安全性检验代码"></a>安全性检验代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> jsonstr = <span class="string">'&#123;"data1":"hello","data2":++value&#125;'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">'('</span>+jsonstr+<span class="string">')'</span>)); <span class="comment">//此时value=2</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + jsonstr))()); <span class="comment">//此时value=3</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(jsonstr)); <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
-<h2 id="效率检验代码"><a href="#效率检验代码" class="headerlink" title="效率检验代码"></a>效率检验代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">buildJson</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str = <span class="string">'&#123;"aa":"aa",'</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">10000</span>;i++)&#123;</span><br><span class="line">		str +=<span class="string">'"aa'</span>+i+<span class="string">'":"aa",'</span></span><br><span class="line">	&#125;</span><br><span class="line">	str +=<span class="string">'"aaa":"aa"&#125;'</span></span><br><span class="line">	<span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">useParse</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> str =buildJson();</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	<span class="built_in">JSON</span>.parse(str);</span><br><span class="line">	<span class="keyword">var</span> parseTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	<span class="built_in">eval</span>(<span class="string">"("</span>+str+<span class="string">")"</span>);</span><br><span class="line">	<span class="keyword">var</span> evalTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="keyword">var</span> startTime = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</span><br><span class="line">	(<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"return "</span> + str))()</span><br><span class="line">	<span class="keyword">var</span> funTime =(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()-startTime;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"JSON.parse解析使用时间："</span>+parseTime,<span class="string">"eval解析使用时间："</span>+evalTime,<span class="string">"function解析使用时间："</span>+funTime)</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：9 eval解析使用时间：35 function解析使用时间：47</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：30 eval解析使用时间：142 function解析使用时间：121</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：16 eval解析使用时间：42 function解析使用时间：47</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：11 eval解析使用时间：32 function解析使用时间：19</span></span><br><span class="line"><span class="comment">//JSON.parse解析使用时间：5 eval解析使用时间：28 function解析使用时间：30</span></span><br></pre></td></tr></table></figure>
+        <p><img src="http://www.hotel-r.net/im/hotel/lv/sunny-18.jpg" alt="sunny"></p>
+<a id="more"></a>
+<blockquote>
+<p><strong>过段时间准备重新求职，但是工作两年是需要总结下，列阳光培养计划如下</strong></p>
+<ol>
+<li>原生js, 原生的继承，解释事件代理，闭包，作用域，原型；</li>
+<li>http流程的重点解析：图解http，content-type,</li>
+<li>浏览器解析dom过程；</li>
+<li>性能和兼容性的案例；</li>
+<li>设计模式，算法；</li>
+</ol>
+</blockquote>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><pre><code>目的是使同类的不同实例共有某些属性，这些属性在构造函数的prototype属性上
+- isPrototypeOf() 判断实例是和构造函数的原型之间的关系 构造函数.prototype.isPrototypeOf(实例)
+- hasOwnProperty() 判断属性是本地属性，还是来自原型
+- in运算符 遍历所有属性
+</code></pre><h3 id="解释-Object-instanceof-Function-和Function-instanceof-Object"><a href="#解释-Object-instanceof-Function-和Function-instanceof-Object" class="headerlink" title="解释 Object instanceof Function 和Function instanceof Object"></a>解释 <code>Object instanceof Function</code> 和<code>Function instanceof Object</code></h3><pre><code>instanceof 计算规则，首先，对比实例和左侧是不是构造函数和实例关系，如果不是沿着实例原型链往上找，找到构造函数和和左侧名称一致返回true；
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo =<span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line">     __proto__                   __proto__                     __proto__</span><br><span class="line">foo -----------&gt; Foo.prototype -----------&gt; <span class="built_in">Object</span>.prototype -----------&gt; <span class="literal">null</span></span><br><span class="line">      __proto__                        __proto__                      __proto__</span><br><span class="line">Foo -----------&gt; <span class="built_in">Function</span>.prototype -----------&gt; <span class="built_in">Object</span>.prototype -----------&gt; <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<pre><code>  function Object(){}
+  Object函数 是Function的实例化
+
+  function Function(){}
+Function.proptotype.__proto__ =Object.prototype
+Object.prototype.constructor = Object
+Function函数 是Function的实例化
+
+`任何函数都是Function函数的实例；任何实例都是函数的new出来的；`
+</code></pre><h2 id="原生的对象继承；"><a href="#原生的对象继承；" class="headerlink" title="原生的对象继承；"></a>原生的对象继承；</h2><h3 id="非构造对象"><a href="#非构造对象" class="headerlink" title="非构造对象"></a>非构造对象</h3><h4 id="循环即成"><a href="#循环即成" class="headerlink" title="循环即成"></a>循环即成</h4><h3 id="构造函数对象"><a href="#构造函数对象" class="headerlink" title="构造函数对象"></a>构造函数对象</h3><h4 id="循环即成-1"><a href="#循环即成-1" class="headerlink" title="循环即成"></a>循环即成</h4><h4 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原型继承（普遍，多实例，消耗内存）</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">sup</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		sup.call(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	sub.prototype = <span class="keyword">new</span> sup();</span><br><span class="line">	sub.prototype.constrctor = sub;</span><br><span class="line"><span class="comment">//原型继承（空对象辅助，只继承原型上的属性）</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">　　   <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">　　　　F.prototype = Parent.prototype;</span><br><span class="line">　　　　Child.prototype = <span class="keyword">new</span> F();</span><br><span class="line">　　　　Child.prototype.constructor = Child;</span><br><span class="line">　　　　Child.uber = Parent.prototype;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -343,13 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/23/性能优化历程（2）/" rel="next" title="性能优化历程（2）">
+                <i class="fa fa-chevron-left"></i> 性能优化历程（2）
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/07/10/npm-link的探究/" rel="prev" title="npm link的探究">
-                npm link的探究 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -364,10 +357,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/04/09/JSON实例化三种方式/"
-     data-title="JSON字符串转换的三种方式"
+        <div class="ds-share flat" data-thread-key="2016/05/24/阳光培养计划/"
+     data-title="阳光培养计划"
      data-content=""
-     data-url="http://yoursite.com/2015/04/09/JSON实例化三种方式/">
+     data-url="http://yoursite.com/2016/05/24/阳光培养计划/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -394,8 +387,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/04/09/JSON实例化三种方式/"
-           data-title="JSON字符串转换的三种方式" data-url="http://yoursite.com/2015/04/09/JSON实例化三种方式/">
+      <div class="ds-thread" data-thread-key="2016/05/24/阳光培养计划/"
+           data-title="阳光培养计划" data-url="http://yoursite.com/2016/05/24/阳光培养计划/">
       </div>
     
   </div>
@@ -519,7 +512,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安全性检验代码"><span class="nav-number">1.</span> <span class="nav-text">安全性检验代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效率检验代码"><span class="nav-number">2.</span> <span class="nav-text">效率检验代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">1.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解释-Object-instanceof-Function-和Function-instanceof-Object"><span class="nav-number">1.1.</span> <span class="nav-text">解释 Object instanceof Function 和Function instanceof Object</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生的对象继承；"><span class="nav-number">2.</span> <span class="nav-text">原生的对象继承；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非构造对象"><span class="nav-number">2.1.</span> <span class="nav-text">非构造对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环即成"><span class="nav-number">2.1.1.</span> <span class="nav-text">循环即成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数对象"><span class="nav-number">2.2.</span> <span class="nav-text">构造函数对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环即成-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">循环即成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链继承"><span class="nav-number">2.2.2.</span> <span class="nav-text">原型链继承</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
