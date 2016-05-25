@@ -80,22 +80,18 @@
 
 
 
-<meta name="description" content="结论渲染流程：script   —–&amp;gt;   layout —–&amp;gt; paint —–&amp;gt;  composite
-计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
-重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="性能优化历程（2）">
-<meta property="og:url" content="http://yoursite.com/2016/05/23/性能优化历程（2）/index.html">
+<meta property="og:title" content="阳光培养计划(1)">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/阳光培养计划(1)/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="结论渲染流程：script   —–&amp;gt;   layout —–&amp;gt; paint —–&amp;gt;  composite
-计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
-重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多">
-<meta property="og:updated_time" content="2016-05-23T09:37:48.000Z">
+<meta property="og:description">
+<meta property="og:image" content="http://www.hotel-r.net/im/hotel/lv/sunny-18.jpg">
+<meta property="og:updated_time" content="2016-05-25T02:29:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="性能优化历程（2）">
-<meta name="twitter:description" content="结论渲染流程：script   —–&amp;gt;   layout —–&amp;gt; paint —–&amp;gt;  composite
-计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
-重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多">
+<meta name="twitter:title" content="阳光培养计划(1)">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://www.hotel-r.net/im/hotel/lv/sunny-18.jpg">
 
 
 
@@ -113,7 +109,7 @@
   };
 </script>
 
-  <title> 性能优化历程（2） | Ryan724 </title>
+  <title> 阳光培养计划(1) | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +239,7 @@
             
             
               
-                性能优化历程（2）
+                阳光培养计划(1)
               
             
           </h1>
@@ -255,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T17:29:36+08:00" content="2016-05-23">
-              2016-05-23
+            <time itemprop="dateCreated" datetime="2016-05-24T22:06:15+08:00" content="2016-05-24">
+              2016-05-24
             </time>
           </span>
 
@@ -266,8 +262,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/性能优化历程（2）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/性能优化历程（2）/" itemprop="commentsCount"></span>
+                <a href="/2016/05/24/阳光培养计划(1)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/阳光培养计划(1)/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,9 +285,43 @@
       
 
       
-        <h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>渲染流程：<br>script   —–&gt;   layout —–&gt; paint —–&gt;  composite</p>
-<p>计算 －－－》 重排  －－－－》 绘制 －－－－》 合并</p>
-<p>重排一定引起重绘；<br>层可以减少重绘对其他元素的影响；<br>层的数量不要太多</p>
+        <p><img src="http://www.hotel-r.net/im/hotel/lv/sunny-18.jpg" alt="sunny"></p>
+<a id="more"></a>
+<blockquote>
+<p><strong>过段时间准备重新求职，但是工作两年是需要总结下，列阳光培养计划如下</strong></p>
+<ol>
+<li>原生js, 原生的继承，解释事件代理，闭包，作用域，原型；</li>
+<li>http流程的重点解析：图解http，content-type,</li>
+<li>浏览器解析dom过程；</li>
+<li>性能和兼容性的案例；</li>
+<li>设计模式，算法；</li>
+</ol>
+</blockquote>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><pre><code>目的是使同类的不同实例共有某些属性，这些属性在构造函数的prototype属性上
+</code></pre><blockquote>
+<ul>
+<li>isPrototypeOf() 判断实例是和构造函数的原型之间的关系 构造函数.prototype.isPrototypeOf(实例)</li>
+<li>hasOwnProperty() 判断属性是本地属性，还是来自原型</li>
+<li>in运算符 遍历所有属性</li>
+</ul>
+</blockquote>
+<h3 id="解释-Object-instanceof-Function-和Function-instanceof-Object"><a href="#解释-Object-instanceof-Function-和Function-instanceof-Object" class="headerlink" title="解释 Object instanceof Function 和Function instanceof Object"></a>解释 <code>Object instanceof Function</code> 和<code>Function instanceof Object</code></h3><blockquote>
+<p>instanceof 计算规则，首先，对比实例和左侧是不是构造函数和实例关系，如果不是沿着实例原型链往上找，找到构造函数和和左侧名称一致返回true；<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo =<span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line">     __proto__                   __proto__                     __proto__</span><br><span class="line">foo -----------&gt; Foo.prototype -----------&gt; <span class="built_in">Object</span>.prototype -----------&gt; <span class="literal">null</span></span><br><span class="line">      __proto__                        __proto__                      __proto__</span><br><span class="line">Foo -----------&gt; <span class="built_in">Function</span>.prototype -----------&gt; <span class="built_in">Object</span>.prototype -----------&gt; <span class="literal">null</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>  function Object(){}
+  Object函数 是Function的实例化
+
+  function Function(){}
+Function.proptotype.__proto__ =Object.prototype
+Object.prototype.constructor = Object
+Function函数 是Function的实例化
+
+`任何函数都是Function函数的实例；任何实例都是函数的new出来的；`
+</code></pre><h2 id="原生的对象继承；"><a href="#原生的对象继承；" class="headerlink" title="原生的对象继承；"></a>原生的对象继承；</h2><h3 id="非构造对象"><a href="#非构造对象" class="headerlink" title="非构造对象"></a>非构造对象</h3><pre><code>循环属性继承
+</code></pre><h3 id="构造函数对象"><a href="#构造函数对象" class="headerlink" title="构造函数对象"></a>构造函数对象</h3><pre><code>两种，（1）in操作符循环属性继承 （2）原型链继承 
+</code></pre><h4 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原型继承（普遍，多实例，消耗内存）</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">sup</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		sup.call(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	sub.prototype = <span class="keyword">new</span> sup();</span><br><span class="line">	sub.prototype.constrctor = sub;</span><br><span class="line"><span class="comment">//原型继承（空对象辅助，只继承原型上的属性）</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">　　   <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">　　　　F.prototype = Parent.prototype;</span><br><span class="line">　　　　Child.prototype = <span class="keyword">new</span> F();</span><br><span class="line">　　　　Child.prototype.constructor = Child;</span><br><span class="line">　　　　Child.uber = Parent.prototype;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+<p>##闭包<br>    只是为了跨越作用域访问变量；<br>    场景：<br>        fun.bind(this);</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind=<span class="function"><span class="keyword">function</span>(<span class="params">thisArg</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> fn=<span class="keyword">this</span>,</span><br><span class="line">        slice=<span class="built_in">Array</span>.prototype.slice,</span><br><span class="line">        args=slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>);<span class="comment">//arguments1</span></span><br><span class="line">    alert(<span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">// alert出1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">// alert出2</span></span><br><span class="line">        <span class="keyword">return</span> fn.apply(thisArg,args.concat(slice.call(<span class="built_in">arguments</span>)));<span class="comment">//arguments2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;).bind(<span class="number">1</span>))(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -315,17 +345,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/22/性能优化历程（1）/" rel="next" title="性能优化历程（1）">
-                <i class="fa fa-chevron-left"></i> 性能优化历程（1）
+              <a href="/2016/05/23/性能优化历程（2）/" rel="next" title="性能优化历程（2）">
+                <i class="fa fa-chevron-left"></i> 性能优化历程（2）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/24/阳光培养计划(1)/" rel="prev" title="阳光培养计划(1)">
-                阳光培养计划(1) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -340,10 +366,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/23/性能优化历程（2）/"
-     data-title="性能优化历程（2）"
+        <div class="ds-share flat" data-thread-key="2016/05/24/阳光培养计划(1)/"
+     data-title="阳光培养计划(1)"
      data-content=""
-     data-url="http://yoursite.com/2016/05/23/性能优化历程（2）/">
+     data-url="http://yoursite.com/2016/05/24/阳光培养计划(1)/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -370,8 +396,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/23/性能优化历程（2）/"
-           data-title="性能优化历程（2）" data-url="http://yoursite.com/2016/05/23/性能优化历程（2）/">
+      <div class="ds-thread" data-thread-key="2016/05/24/阳光培养计划(1)/"
+           data-title="阳光培养计划(1)" data-url="http://yoursite.com/2016/05/24/阳光培养计划(1)/">
       </div>
     
   </div>
@@ -495,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">1.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">1.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解释-Object-instanceof-Function-和Function-instanceof-Object"><span class="nav-number">1.1.</span> <span class="nav-text">解释 Object instanceof Function 和Function instanceof Object</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生的对象继承；"><span class="nav-number">2.</span> <span class="nav-text">原生的对象继承；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非构造对象"><span class="nav-number">2.1.</span> <span class="nav-text">非构造对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数对象"><span class="nav-number">2.2.</span> <span class="nav-text">构造函数对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链继承"><span class="nav-number">2.2.1.</span> <span class="nav-text">原型链继承</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
