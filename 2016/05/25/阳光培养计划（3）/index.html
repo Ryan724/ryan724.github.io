@@ -80,19 +80,22 @@
 
 
 
-<meta name="description">
+<meta name="description" content="ttp流程的重点解析：图解http，content-type,跨域；
+跨域降域domain修改
+JSONP原理：当我们通过script标签请求时后台就会根据相应的参数(json,handleResponse)来生成相应的json数据(handleResponse({“data”: “zhe”}))script.src = ‘http://www.baidu.com/json/?callback=h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="性能优化历程（1）">
-<meta property="og:url" content="http://yoursite.com/2016/05/22/性能优化历程（1）/index.html">
+<meta property="og:title" content="阳光培养计划（3）">
+<meta property="og:url" content="http://yoursite.com/2016/05/25/阳光培养计划（3）/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description">
-<meta property="og:image" content="http://www.mathworks.com/cmsimages/63256_wl_91967v00gpu_fig1_wl.jpg">
-<meta property="og:image" content="http://www.ofweek.com/Upload/plainimages/flora/46/403.jpg">
-<meta property="og:updated_time" content="2016-05-24T02:38:17.000Z">
+<meta property="og:description" content="ttp流程的重点解析：图解http，content-type,跨域；
+跨域降域domain修改
+JSONP原理：当我们通过script标签请求时后台就会根据相应的参数(json,handleResponse)来生成相应的json数据(handleResponse({“data”: “zhe”}))script.src = ‘http://www.baidu.com/json/?callback=h">
+<meta property="og:updated_time" content="2016-05-25T16:14:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="性能优化历程（1）">
-<meta name="twitter:description">
-<meta name="twitter:image" content="http://www.mathworks.com/cmsimages/63256_wl_91967v00gpu_fig1_wl.jpg">
+<meta name="twitter:title" content="阳光培养计划（3）">
+<meta name="twitter:description" content="ttp流程的重点解析：图解http，content-type,跨域；
+跨域降域domain修改
+JSONP原理：当我们通过script标签请求时后台就会根据相应的参数(json,handleResponse)来生成相应的json数据(handleResponse({“data”: “zhe”}))script.src = ‘http://www.baidu.com/json/?callback=h">
 
 
 
@@ -110,7 +113,7 @@
   };
 </script>
 
-  <title> 性能优化历程（1） | Ryan724 </title>
+  <title> 阳光培养计划（3） | Ryan724 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +243,7 @@
             
             
               
-                性能优化历程（1）
+                阳光培养计划（3）
               
             
           </h1>
@@ -252,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-22T19:01:51+08:00" content="2016-05-22">
-              2016-05-22
+            <time itemprop="dateCreated" datetime="2016-05-25T23:40:03+08:00" content="2016-05-25">
+              2016-05-25
             </time>
           </span>
 
@@ -263,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/22/性能优化历程（1）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/性能优化历程（1）/" itemprop="commentsCount"></span>
+                <a href="/2016/05/25/阳光培养计划（3）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/阳光培养计划（3）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -286,62 +289,12 @@
       
 
       
-        <p><img src="http://www.mathworks.com/cmsimages/63256_wl_91967v00gpu_fig1_wl.jpg" alt="GPU和cpu"></p>
-<a id="more"></a>
-<h2 id="性能问题总结："><a href="#性能问题总结：" class="headerlink" title="性能问题总结："></a>性能问题总结：</h2><ul>
-<li>动画卡</li>
-<li>点击触发迟缓</li>
-<li></li>
-</ul>
-<h3 id="硬件加速："><a href="#硬件加速：" class="headerlink" title="硬件加速："></a>硬件加速：</h3><p>把平常会交给cpu的计算交给gpu来计算；gpu计算特性是：同时处理大量重复性简易计算；</p>
-<p>CPU擅长的是像操作系统、系统软件和通用应用程序这类拥有复杂指令调度、循环、分支、逻辑判断以及执行等的程序任务。它的并行优势是程序执行层面的，程序逻辑的复杂度也限定了程序执行的指令并行性，上百个并行程序执行的线程基本看不到;<br>GPU擅长的是图形类的或者是非图形类的高度并行数值计算，GPU可以容纳上千个没有逻辑关系的数值计算线程，它的优势是无逻辑关系数据的并行计算。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">props</th>
-<th style="text-align:center">Cpu</th>
-<th style="text-align:center">Gpu</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">核</td>
-<td style="text-align:center">1&lt;n&lt;10</td>
-<td style="text-align:center">n&gt;100</td>
-</tr>
-<tr>
-<td style="text-align:left">通用性</td>
-<td style="text-align:center">任何计算</td>
-<td style="text-align:center">图像处理，海量数值处理</td>
-</tr>
-<tr>
-<td style="text-align:left">float处理能力</td>
-<td style="text-align:center">强</td>
-<td style="text-align:center">弱</td>
-</tr>
-</tbody>
-</table>
-<h4 id="CPU和GPU的架构差异"><a href="#CPU和GPU的架构差异" class="headerlink" title="CPU和GPU的架构差异"></a>CPU和GPU的架构差异</h4><p><img src="http://www.ofweek.com/Upload/plainimages/flora/46/403.jpg" alt="CPU和GPU的架构差异"></p>
-<h4 id="css当中的硬件加速"><a href="#css当中的硬件加速" class="headerlink" title="css当中的硬件加速;"></a>css当中的硬件加速;</h4><p>gpu可以存储一定数量的纹理（一个矩形像素点集合），并高效的操作这些纹理（比如进行特定的移动，缩放，旋转）；浏览器不会在每一帧都会知一次，而是声称dom元素的快找，作为gpu纹理（也叫做层）存储起来，之后浏览器只需要告诉gpu去转换指定的纹理来实现dom元素的动画效果；</p>
-<p>cpu和gpu的总线太宽不是无限的，可能会拥堵；我们要控制之间传输的数据量；</p>
-<ol>
-<li>每个层对应一个gpu纹理，太多的层消耗很多内存；应减少层的数量；</li>
-<li>每次合成层更新，会产生一堆新的像素传递给gpu，避免动画过程中层的更新；transformation（translate, scale, rotate）、opacity或者filters</li>
-</ol>
-<h4 id="层创建标准"><a href="#层创建标准" class="headerlink" title="层创建标准"></a>层创建标准</h4><p>什么情况下能使元素获得自己的层？虽然 Chrome 的启发式方法(heuristic)随着时间在不断发展进步，但是从目前来说，满足以下任意情况便会创建层：</p>
-<ul>
-<li>3D 或透视变换(perspective transform) CSS 属性</li>
-<li>使用加速视频解码的 <code>&lt;video&gt;</code>元素</li>
-<li>拥有 3D (WebGL) 上下文或加速的 2D 上下文的 <code>&lt;canvas&gt;</code> 元素</li>
-<li>混合插件(如 Flash)</li>
-<li>对自己的 opacity 做 CSS 动画或使用一个动画变换的元素</li>
-<li>拥有加速 CSS 过滤器的元素</li>
-<li>元素有一个包含复合层的后代节点(换句话说，就是一个元素拥有一个子元素，该子元素在自己的层里)</li>
-<li>元素有一个 z-index 较低且包含一个复合层的兄弟元素(换句话说就是该元素在复合层上面渲染)</li>
-<li>css的will-change属性</li>
-</ul>
-<p><a href="http://www.cnblogs.com/yuzhongwusan/p/4186405.html" target="_blank" rel="external">CSS will-change 属性</a><br><a href="http://blogs.intel.com/china/2008/06/19/cpugpu_2/" target="_blank" rel="external">CPU和GPU擅长和不擅长的方面</a><br><a href="http://www.html5rocks.com/zh/tutorials/speed/high-performance-animations/" target="_blank" rel="external">High Performance Animations</a><br><a href="http://www.html5rocks.com/zh/tutorials/speed/layers/" target="_blank" rel="external">Accelerated Rendering in Chrome</a></p>
-
+        <p><strong>ttp流程的重点解析：图解http，content-type,跨域；</strong></p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h3 id="降域"><a href="#降域" class="headerlink" title="降域"></a>降域</h3><p>domain修改</p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>原理：<br>当我们通过script标签请求时<br>后台就会根据相应的参数(json,handleResponse)<br>来生成相应的json数据(handleResponse({“data”: “zhe”}))<br>script.src = ‘<a href="http://www.baidu.com/json/?callback=handleResponse" target="_blank" rel="external">http://www.baidu.com/json/?callback=handleResponse</a>‘;</p>
+<h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><p>原理依赖后端不阻止外域请求<br>Header set Access-Control-Allow-Origin </p>
+<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><h3 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h3><p>原理：<br>name 在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。<br>通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。<br>但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。<br>同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。</p>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3>
       
     </div>
     
@@ -364,17 +317,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/23/前端＋工程化＝前端工程化/" rel="next" title="前端＋工程化＝前端工程化">
-                <i class="fa fa-chevron-left"></i> 前端＋工程化＝前端工程化
+              <a href="/2016/05/25/阳光培养计划（2）/" rel="next" title="阳光培养计划（2）">
+                <i class="fa fa-chevron-left"></i> 阳光培养计划（2）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/23/性能优化历程（2）/" rel="prev" title="性能优化历程（2）">
-                性能优化历程（2） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -389,10 +338,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/22/性能优化历程（1）/"
-     data-title="性能优化历程（1）"
+        <div class="ds-share flat" data-thread-key="2016/05/25/阳光培养计划（3）/"
+     data-title="阳光培养计划（3）"
      data-content=""
-     data-url="http://yoursite.com/2016/05/22/性能优化历程（1）/">
+     data-url="http://yoursite.com/2016/05/25/阳光培养计划（3）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -419,8 +368,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/22/性能优化历程（1）/"
-           data-title="性能优化历程（1）" data-url="http://yoursite.com/2016/05/22/性能优化历程（1）/">
+      <div class="ds-thread" data-thread-key="2016/05/25/阳光培养计划（3）/"
+           data-title="阳光培养计划（3）" data-url="http://yoursite.com/2016/05/25/阳光培养计划（3）/">
       </div>
     
   </div>
@@ -544,7 +493,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能问题总结："><span class="nav-number">1.</span> <span class="nav-text">性能问题总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件加速："><span class="nav-number">1.1.</span> <span class="nav-text">硬件加速：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU和GPU的架构差异"><span class="nav-number">1.1.1.</span> <span class="nav-text">CPU和GPU的架构差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css当中的硬件加速"><span class="nav-number">1.1.2.</span> <span class="nav-text">css当中的硬件加速;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层创建标准"><span class="nav-number">1.1.3.</span> <span class="nav-text">层创建标准</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">1.</span> <span class="nav-text">跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#降域"><span class="nav-number">1.1.</span> <span class="nav-text">降域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">1.2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cors"><span class="nav-number">1.3.</span> <span class="nav-text">cors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">1.4.</span> <span class="nav-text">postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-name"><span class="nav-number">1.5.</span> <span class="nav-text">window.name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket"><span class="nav-number">1.6.</span> <span class="nav-text">WebSocket</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -104,7 +104,7 @@
 预测：
 1. 是自己调用，可以访问上一个调用着
 2. 是顶级对象调用（g">
-<meta property="og:updated_time" content="2016-04-23T17:18:12.000Z">
+<meta property="og:updated_time" content="2016-05-25T14:49:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="setTimeout与this">
 <meta name="twitter:description" content="###问题的开始：
@@ -342,8 +342,8 @@
 3. 是最初父级对象调用
 </code></pre><p>关注点始终在调用，我们通过this就可以观察，this是方法的持有者</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		alert(<span class="string">"ok"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="keyword">this</span>.fn, <span class="number">1000</span>); <span class="comment">//直接使用this引用当前对象  </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> obj();</span><br><span class="line">o.fn();</span><br></pre></td></tr></table></figure>
-<p>###结论</p>
-<p> setTimeout是顶级对象调用</p>
+<p>###结论<br>setInterval()，setTimeout() 方法是浏览器 window对象提供，所以第一个参数函数中的this指向window对象，这跟变量的作用域有关：</p>
+<p>(你所不了解的setTimeout)[<a href="http://www.css88.com/archives/5804" target="_blank" rel="external">http://www.css88.com/archives/5804</a>]</p>
 
       
     </div>
@@ -468,7 +468,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
