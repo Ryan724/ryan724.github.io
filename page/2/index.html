@@ -239,6 +239,154 @@
             
               
                 
+                <a class="post-title-link" href="/2015/07/10/npm-link的探究/" itemprop="url">
+                  npm link的探究
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-10T01:16:37+08:00" content="2015-07-10">
+              2015-07-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/10/npm-link的探究/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/10/npm-link的探究/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          每次和电脑直接的交互都是给电脑下达一定的指令，电脑根据指令调用执行相应任务。（待~~~~）
+npm line 方式一. 操作流程
+我们在开发的目录下，编写一个最简单的node可执行文件a.js12#!/usr/bin/env nodeconsole.log('hello Ryan');
+
+
+#!/usr/bin/env node这句很重要，后面解释。
+
+建立package.json文件
+123456&#123;    "name":"npm-link",    "bin":&#123;        "ryan":"a.js"    &#125;&#125;
+
+在该文件夹下执行npm link
+
+可在任意文件夹下运行ryan
+
+
+二. 问题就来了
+
+npm link执行，发生了什么?
+命令行输入ryan,怎么调用的？
+
+
+第一个问题  npm link执行，发生了什么?
+官方解释点这里;
+12cd ../dev/node-redisnpm link
+在开发的目录下执行npm link,会在npm全局的文件夹根据package.json的描述创建引用文件指向本地12cd ../dev/n
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/10/npm-link的探究/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/04/09/JSON实例化三种方式/" itemprop="url">
                   JSON字符串转换的三种方式
                 </a>
@@ -397,7 +545,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
