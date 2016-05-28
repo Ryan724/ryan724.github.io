@@ -88,7 +88,7 @@
 <meta property="og:description">
 <meta property="og:image" content="http://www.mathworks.com/cmsimages/63256_wl_91967v00gpu_fig1_wl.jpg">
 <meta property="og:image" content="http://www.ofweek.com/Upload/plainimages/flora/46/403.jpg">
-<meta property="og:updated_time" content="2016-05-24T02:38:17.000Z">
+<meta property="og:updated_time" content="2016-05-27T06:33:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="性能优化历程（1）">
 <meta name="twitter:description">
@@ -291,7 +291,10 @@
 <h2 id="性能问题总结："><a href="#性能问题总结：" class="headerlink" title="性能问题总结："></a>性能问题总结：</h2><ul>
 <li>动画卡</li>
 <li>点击触发迟缓</li>
-<li></li>
+<li>几个方面考虑：<ul>
+<li>动画实现方式合理性</li>
+</ul>
+</li>
 </ul>
 <h3 id="硬件加速："><a href="#硬件加速：" class="headerlink" title="硬件加速："></a>硬件加速：</h3><p>把平常会交给cpu的计算交给gpu来计算；gpu计算特性是：同时处理大量重复性简易计算；</p>
 <p>CPU擅长的是像操作系统、系统软件和通用应用程序这类拥有复杂指令调度、循环、分支、逻辑判断以及执行等的程序任务。它的并行优势是程序执行层面的，程序逻辑的复杂度也限定了程序执行的指令并行性，上百个并行程序执行的线程基本看不到;<br>GPU擅长的是图形类的或者是非图形类的高度并行数值计算，GPU可以容纳上千个没有逻辑关系的数值计算线程，它的优势是无逻辑关系数据的并行计算。</p>

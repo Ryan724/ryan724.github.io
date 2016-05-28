@@ -290,10 +290,20 @@
         
           
           ttp流程的重点解析：图解http，content-type,跨域；
-跨域降域domain修改
-JSONP原理：当我们通过script标签请求时后台就会根据相应的参数(json,handleResponse)来生成相应的json数据(handleResponse({“data”: “zhe”}))script.src = ‘http://www.baidu.com/json/?callback=handleResponse‘;
-cors原理依赖后端不阻止外域请求Header set Access-Control-Allow-Origin 
-postMessagewindow.name原理：name 在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必
+##http    浏览器输入url到整个页面显示出来经历的过程
+从输入 URL 到页面加载完成的过程中都发生了什么事情？
+输入的时候判断（回车前）判断是域名，还是搜索条件（回车后）url ＝ 协议＋域名／ip+port协议：http,https,ftp…
+HTTP 请求的发送DNS查询数据请求历程http code 
+
+301 跳转302 临时重定向304 读取缓存415 不支持媒体类型503 系统繁忙505 HTTP 版本不受支持
+
+后台处理流程负载均衡:
+&gt; F5
+&gt; LVS
+&gt; 反向代理
+Web Server 中的处理 ：apache,
+返回数据浏览器处理跨域降域domain修改
+JSONP原理：当我们通过script标签请求时后台就会根据相应的参数(json,handleResponse)来生成相应的json数据(handleResponse({“data”: “zhe”}))script.src = ‘http://www.baidu.com/json/?callback=handleR
           ...
 
           <div class="post-more-link text-center">
@@ -716,7 +726,8 @@ tabindex 基础知识 tabindex是html元素的属性，允许你操作元素的t
       
         
           
-          结论渲染流程：script   —–&gt;   layout —–&gt; paint —–&gt;  composite
+          动画实现形式：    javascript 直接操作dom    css: trastion,animation    canvas + js
+结论渲染流程：script   —–&gt;   layout —–&gt; paint —–&gt;  composite
 计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
 重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多
 
