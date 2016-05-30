@@ -84,9 +84,7 @@
 ##http    浏览器输入url到整个页面显示出来经历的过程
 从输入 URL 到页面加载完成的过程中都发生了什么事情？
 输入的时候判断（回车前）判断是域名，还是搜索条件（回车后）url ＝ 协议＋域名／ip+port协议：http,https,ftp…
-HTTP 请求的发送DNS查询数据请求历程http code 
-
-301">
+HTTP 请求的发送　HTTP协议是无状态的和Connection: k">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阳光培养计划（3）">
 <meta property="og:url" content="http://yoursite.com/2016/05/25/阳光培养计划（3）/index.html">
@@ -95,19 +93,15 @@ HTTP 请求的发送DNS查询数据请求历程http code
 ##http    浏览器输入url到整个页面显示出来经历的过程
 从输入 URL 到页面加载完成的过程中都发生了什么事情？
 输入的时候判断（回车前）判断是域名，还是搜索条件（回车后）url ＝ 协议＋域名／ip+port协议：http,https,ftp…
-HTTP 请求的发送DNS查询数据请求历程http code 
-
-301">
-<meta property="og:updated_time" content="2016-05-28T17:57:50.000Z">
+HTTP 请求的发送　HTTP协议是无状态的和Connection: k">
+<meta property="og:updated_time" content="2016-05-29T11:17:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阳光培养计划（3）">
 <meta name="twitter:description" content="ttp流程的重点解析：图解http，content-type,跨域；
 ##http    浏览器输入url到整个页面显示出来经历的过程
 从输入 URL 到页面加载完成的过程中都发生了什么事情？
 输入的时候判断（回车前）判断是域名，还是搜索条件（回车后）url ＝ 协议＋域名／ip+port协议：http,https,ftp…
-HTTP 请求的发送DNS查询数据请求历程http code 
-
-301">
+HTTP 请求的发送　HTTP协议是无状态的和Connection: k">
 
 
 
@@ -305,7 +299,22 @@ HTTP 请求的发送DNS查询数据请求历程http code
 <p>##http<br>    <strong>浏览器输入url到整个页面显示出来经历的过程</strong></p>
 <p><a href="http://fex.baidu.com/blog/2014/05/what-happen/?qq-pf-to=pcqq.group" target="_blank" rel="external">从输入 URL 到页面加载完成的过程中都发生了什么事情？</a></p>
 <h3 id="输入的时候判断（回车前）"><a href="#输入的时候判断（回车前）" class="headerlink" title="输入的时候判断（回车前）"></a>输入的时候判断（回车前）</h3><h3 id="判断是域名，还是搜索条件（回车后）"><a href="#判断是域名，还是搜索条件（回车后）" class="headerlink" title="判断是域名，还是搜索条件（回车后）"></a>判断是域名，还是搜索条件（回车后）</h3><p>url ＝ 协议＋域名／ip+port<br>协议：http,https,ftp…</p>
-<h3 id="HTTP-请求的发送"><a href="#HTTP-请求的发送" class="headerlink" title="HTTP 请求的发送"></a>HTTP 请求的发送</h3><h4 id="DNS查询"><a href="#DNS查询" class="headerlink" title="DNS查询"></a>DNS查询</h4><h4 id="数据请求历程"><a href="#数据请求历程" class="headerlink" title="数据请求历程"></a>数据请求历程</h4><p>http code </p>
+<h3 id="HTTP-请求的发送"><a href="#HTTP-请求的发送" class="headerlink" title="HTTP 请求的发送"></a>HTTP 请求的发送</h3><p>　<strong>HTTP协议是无状态的和Connection: keep-alive的区别</strong></p>
+<p>　　无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。从另一方面讲，打开一个服务器上的网页和你之前打开这个服务器上的网页之间没有任何联系。<br>HTTP是一个无状态的面向连接的协议，无状态不代表HTTP不能保持TCP连接，更不能代表HTTP使用的是UDP协议（无连接）。</p>
+<h4 id="DNS查询"><a href="#DNS查询" class="headerlink" title="DNS查询"></a>DNS查询</h4><p>用户输入访问的域名,操作系统向 LocalDns 查询域名的ip地址.<br>LocalDns向 ROOT DNS 查询域名的授权服务器(这里假设LocalDns缓存过期)<br>ROOT DNS将域名授权dns记录回应给 LocalDns<br>LocalDns得到域名的授权dns记录后,继续向域名授权dns查询域名的ip地址<br>域名授权dns 查询域名记录后，回应给 LocalDns<br>LocalDns 将得到的域名ip地址，回应给 用户端<br>用户得到域名ip地址后，访问站点服务器<br>站点服务器应答请求，将内容返回给客户端.</p>
+<h4 id="数据请求历程"><a href="#数据请求历程" class="headerlink" title="数据请求历程"></a>数据请求历程</h4><p>tcp/ip <a href="http://www.cnblogs.com/BlueTzar/articles/811160.html" target="_blank" rel="external">四层结构</a></p>
+<ol>
+<li><p>应用层 对正在运行的程序提供服务，不同服务引入不同的网络协议（http，ftp,smtp…）</p>
+</li>
+<li><p>运输层 tcp: 把应用层受到的数据分割，并在哥哥豹纹上标记序号以及端口号传给下网际层</p>
+<pre><code>     或者，将收到的豹纹重组传给应用层
+udp:是一个不可靠的、无连接协议;
+</code></pre></li>
+<li><p>网际层 它的功能是把分组发往目标网络或主机。<br>同时，为了尽快地发送分组，可能需要沿不同的路径同时进行分组传递。因此，分组到达的顺序和发送的顺序可能不同，这就需要上层必须对分组进行排序。　</p>
+</li>
+</ol>
+<p>4 链路层 硬件部分，</p>
+<p>http code </p>
 <blockquote>
 <p>301 跳转<br>302 临时重定向<br>304 读取缓存<br>415 不支持媒体类型<br>503 系统繁忙<br>505 HTTP 版本不受支持</p>
 </blockquote>
@@ -314,7 +323,9 @@ HTTP 请求的发送DNS查询数据请求历程http code
 &gt; LVS
 &gt; 反向代理
 </code></pre><p>Web Server 中的处理 ：apache,</p>
-<h4 id="返回数据"><a href="#返回数据" class="headerlink" title="返回数据"></a>返回数据</h4><h3 id="浏览器处理"><a href="#浏览器处理" class="headerlink" title="浏览器处理"></a>浏览器处理</h3><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h3 id="降域"><a href="#降域" class="headerlink" title="降域"></a>降域</h3><p>domain修改</p>
+<h4 id="返回数据"><a href="#返回数据" class="headerlink" title="返回数据"></a>返回数据</h4><h3 id="浏览器处理"><a href="#浏览器处理" class="headerlink" title="浏览器处理"></a>浏览器处理</h3><p> <a href="http://ryan724.github.io/2016/05/25/%E9%98%B3%E5%85%89%E5%9F%B9%E5%85%BB%E8%AE%A1%E5%88%92%EF%BC%882%EF%BC%89/#more" target="_blank" rel="external">dom解析</a></p>
+<h4 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h4><p> <a href="http://blog.csdn.net/luoweifu/article/details/51031099" target="_blank" rel="external">CDN 概述</a></p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h3 id="降域"><a href="#降域" class="headerlink" title="降域"></a>降域</h3><p>domain修改</p>
 <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>原理：<br>当我们通过script标签请求时<br>后台就会根据相应的参数(json,handleResponse)<br>来生成相应的json数据(handleResponse({“data”: “zhe”}))<br>script.src = ‘<a href="http://www.baidu.com/json/?callback=handleResponse" target="_blank" rel="external">http://www.baidu.com/json/?callback=handleResponse</a>‘;</p>
 <h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><p>原理依赖后端不阻止外域请求<br>Header set Access-Control-Allow-Origin </p>
 <h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><h3 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h3><p>原理：<br>name 在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。<br>通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。<br>但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。<br>同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。</p>
@@ -517,7 +528,7 @@ HTTP 请求的发送DNS查询数据请求历程http code
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入的时候判断（回车前）"><span class="nav-number">1.</span> <span class="nav-text">输入的时候判断（回车前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是域名，还是搜索条件（回车后）"><span class="nav-number">2.</span> <span class="nav-text">判断是域名，还是搜索条件（回车后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-请求的发送"><span class="nav-number">3.</span> <span class="nav-text">HTTP 请求的发送</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS查询"><span class="nav-number">3.1.</span> <span class="nav-text">DNS查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据请求历程"><span class="nav-number">3.2.</span> <span class="nav-text">数据请求历程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后台处理流程"><span class="nav-number">3.3.</span> <span class="nav-text">后台处理流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回数据"><span class="nav-number">3.4.</span> <span class="nav-text">返回数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器处理"><span class="nav-number">4.</span> <span class="nav-text">浏览器处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number"></span> <span class="nav-text">跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#降域"><span class="nav-number">1.</span> <span class="nav-text">降域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cors"><span class="nav-number">3.</span> <span class="nav-text">cors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">4.</span> <span class="nav-text">postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-name"><span class="nav-number">5.</span> <span class="nav-text">window.name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket"><span class="nav-number">6.</span> <span class="nav-text">WebSocket</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入的时候判断（回车前）"><span class="nav-number">1.</span> <span class="nav-text">输入的时候判断（回车前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是域名，还是搜索条件（回车后）"><span class="nav-number">2.</span> <span class="nav-text">判断是域名，还是搜索条件（回车后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-请求的发送"><span class="nav-number">3.</span> <span class="nav-text">HTTP 请求的发送</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS查询"><span class="nav-number">3.1.</span> <span class="nav-text">DNS查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据请求历程"><span class="nav-number">3.2.</span> <span class="nav-text">数据请求历程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后台处理流程"><span class="nav-number">3.3.</span> <span class="nav-text">后台处理流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回数据"><span class="nav-number">3.4.</span> <span class="nav-text">返回数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器处理"><span class="nav-number">4.</span> <span class="nav-text">浏览器处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CDN加速"><span class="nav-number">4.1.</span> <span class="nav-text">CDN加速</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number"></span> <span class="nav-text">跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#降域"><span class="nav-number">1.</span> <span class="nav-text">降域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cors"><span class="nav-number">3.</span> <span class="nav-text">cors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">4.</span> <span class="nav-text">postMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-name"><span class="nav-number">5.</span> <span class="nav-text">window.name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket"><span class="nav-number">6.</span> <span class="nav-text">WebSocket</span></a></li></ol></div>
             
           </div>
         </section>

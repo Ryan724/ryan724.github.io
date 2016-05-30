@@ -81,24 +81,21 @@
 
 
 <meta name="description" content="动画实现形式：    javascript 直接操作dom    css: trastion,animation    canvas + js
-结论渲染流程：script   —–&amp;gt;   layout —–&amp;gt; paint —–&amp;gt;  composite
-计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
-重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多">
+
+60Hz和60fps是什么关系没有任何关系。fps代表GPU渲染画面的频率，Hz代表显示器刷新屏幕的频率。一幅静态图片，你可以说这副图片的fps是0帧/秒，但绝对不能说此时屏幕的刷新率是0Hz，也就是说刷新率不随图像内容的变化而变化。游戏也好浏览器也好，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="性能优化历程（2）">
 <meta property="og:url" content="http://yoursite.com/2016/05/23/性能优化历程（2）/index.html">
 <meta property="og:site_name" content="Ryan724">
 <meta property="og:description" content="动画实现形式：    javascript 直接操作dom    css: trastion,animation    canvas + js
-结论渲染流程：script   —–&amp;gt;   layout —–&amp;gt; paint —–&amp;gt;  composite
-计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
-重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多">
-<meta property="og:updated_time" content="2016-05-27T06:38:30.000Z">
+
+60Hz和60fps是什么关系没有任何关系。fps代表GPU渲染画面的频率，Hz代表显示器刷新屏幕的频率。一幅静态图片，你可以说这副图片的fps是0帧/秒，但绝对不能说此时屏幕的刷新率是0Hz，也就是说刷新率不随图像内容的变化而变化。游戏也好浏览器也好，">
+<meta property="og:updated_time" content="2016-05-29T09:34:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="性能优化历程（2）">
 <meta name="twitter:description" content="动画实现形式：    javascript 直接操作dom    css: trastion,animation    canvas + js
-结论渲染流程：script   —–&amp;gt;   layout —–&amp;gt; paint —–&amp;gt;  composite
-计算 －－－》 重排  －－－－》 绘制 －－－－》 合并
-重排一定引起重绘；层可以减少重绘对其他元素的影响；层的数量不要太多">
+
+60Hz和60fps是什么关系没有任何关系。fps代表GPU渲染画面的频率，Hz代表显示器刷新屏幕的频率。一幅静态图片，你可以说这副图片的fps是0帧/秒，但绝对不能说此时屏幕的刷新率是0Hz，也就是说刷新率不随图像内容的变化而变化。游戏也好浏览器也好，">
 
 
 
@@ -293,7 +290,15 @@
 
       
         <p>动画实现形式：<br>    javascript 直接操作dom<br>    css: trastion,animation<br>    canvas + js</p>
-<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>渲染流程：<br>script   —–&gt;   layout —–&gt; paint —–&gt;  composite</p>
+<p><a href="http://www.zuojj.com/archives/1292.html" target="_blank" rel="external"></a></p>
+<h3 id="60Hz和60fps是什么关系"><a href="#60Hz和60fps是什么关系" class="headerlink" title="60Hz和60fps是什么关系"></a>60Hz和60fps是什么关系</h3><p>没有任何关系。fps代表GPU渲染画面的频率，Hz代表显示器刷新屏幕的频率。一幅静态图片，你可以说这副图片的fps是0帧/秒，但绝对不能说此时屏幕的刷新率是0Hz，也就是说刷新率不随图像内容的变化而变化。游戏也好浏览器也好，我们谈到掉帧，是指GPU渲染画面频率降低。比如跌落到30fps甚至20fps，但因为视觉暂留原理，我们看到的画面仍然是运动和连贯的。</p>
+<h3 id="CSS动画"><a href="#CSS动画" class="headerlink" title="CSS动画"></a>CSS动画</h3><h4 id="Transitions"><a href="#Transitions" class="headerlink" title="Transitions"></a>Transitions</h4><h4 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h4><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><em>优点：</em><br>1) 简单、高效<br>2) 声明式的<br>3) 不依赖与主线程，采用硬件加速（GPU）参看层的创建<br>4) 简单的控制keyframe animation 播放和暂停</p>
+<p><em>缺点：</em><br>1) 不能动态的修改或定义动画内容<br>2) 不同的动画无法实现同步<br>3) 多个动画彼此无法堆叠</p>
+<h3 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h3><p>优点：<br>1) 在每次浏览器更新页面时，能获取通知并执行应用。 简单理解为，RAF能在每个16.7ms间执行一次咱们的函数，不多不少。<br>2) 最小化的消耗资源，RAF在页面被切换或浏览器最小化时，会暂停执行，等页面再次关注时，继续执行动画。<br>3) 相比 CSS 动画有更好的掌控，能合理降低CPU的使用。</p>
+<p>缺点：<br>1) 无法控制执行时间，执行时间由系统根据屏幕刷新时间决定<br>2) 浏览器兼容性问题，IE10+及现代浏览器，低版本浏览器建议降级处理，使用setInterval或setTimeout</p>
+<h3 id="SVG动画"><a href="#SVG动画" class="headerlink" title="SVG动画"></a>SVG动画</h3><p>优点：<br>1) 矢量图形，不受像素影响——SVG的这个特性使得它在不同的平台或者媒体下表现良好，无论屏幕分辨率如何<br>2) SVG对动画的支持较好，其DOM结构可以被其特定语法或者Javascript控制，从而轻松的实现动画<br>3) Javascript可以完全控制SVG Dom 元素<br>4) SVG的结构是XML，其可访问性（盲文、声音朗读等）、可操作性、可编程性、可被CSS样式化完胜Canvas。另外，其支持 ARIA 属性，使其如虎添翼。</p>
+<p>缺点：<br>1) DOM比正常的图形慢，而且如果其结点多而杂，就更慢。<br>2) SVG 画点报表什么的，还行；在网页游戏前，就束手无策了；当然可以结合 Canvas + SVG实现。<br>3) 不能动态的修改动画内容<br>4) 不能与HTML内容集成<br>5) 整个SVG作为一个动画<br>6) 浏览器兼容性问题，IE8-以及Android 2.3默认浏览器是不支持SVG</p>
+<h3 id="Web-Animations"><a href="#Web-Animations" class="headerlink" title="Web Animations"></a><a href="https://github.com/web-animations/web-animations-js" target="_blank" rel="external">Web Animations</a></h3><h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>渲染流程：<br>script   —–&gt;   layout —–&gt; paint —–&gt;  composite</p>
 <p>计算 －－－》 重排  －－－－》 绘制 －－－－》 合并</p>
 <p>重排一定引起重绘；<br>层可以减少重绘对其他元素的影响；<br>层的数量不要太多</p>
 
@@ -499,7 +504,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">1.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#60Hz和60fps是什么关系"><span class="nav-number">1.</span> <span class="nav-text">60Hz和60fps是什么关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS动画"><span class="nav-number">2.</span> <span class="nav-text">CSS动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Transitions"><span class="nav-number">2.1.</span> <span class="nav-text">Transitions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Animation"><span class="nav-number">2.2.</span> <span class="nav-text">Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requestAnimationFrame"><span class="nav-number">3.</span> <span class="nav-text">requestAnimationFrame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG动画"><span class="nav-number">4.</span> <span class="nav-text">SVG动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-Animations"><span class="nav-number">5.</span> <span class="nav-text">Web Animations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">5.1.</span> <span class="nav-text">结论</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
