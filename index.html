@@ -507,8 +507,8 @@ DNS查询用户输入访问的域名,操作系统向 LocalDns 查询域名的ip�
 适当运用tabindex这个有用的工具，可许多浏览器处理这个属性不稳定；来挑战这个问题；
 tabindex 基础知识 tabindex是html元素的属性，允许你操作元素的tab顺序；一般，在web页面点击tab键将按照可交互元素呈现在文档流的顺序逐一获取焦点。一旦该元素获取焦点，可以通过键盘操作页面：激活链接、点击提交按钮、或给input输入信息
 使元素focusable 设置元素属性tabindex=&quot;0&quot;可以使它focusable，无论它是不是可交互元素。这个对于完成一个form或者应用组件是相当有用的;但是这样做潜在的风险是：使元素没有正确的WAI-ARIA属性，影响使用屏幕阅读器的人的使用；
-连续的 tabindex从tab队列移除各个浏览器处理tabindex的相同方式测试发生了什么？
-          
+连续的 tabindex比0大的tabindex值，指定元素在页面中的tab顺序。    设置`tabindex=&quot;1&quot;` 的元素会在第一次点击tab的时候被focus,继续点击tabindex值更高的元素会被focus,也包括其他键盘事件可focus的元素（tabindex=&quot
+          ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/25/tabindex-跨浏览器（翻译）/#more" rel="contents">
