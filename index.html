@@ -236,6 +236,179 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/27/div完全居中/" itemprop="url">
+                  性能优化历程（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-27T17:01:51+08:00" content="2016-07-27">
+              2016-07-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/27/div完全居中/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/div完全居中/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+
+所用样式
+支持的浏览器
+是否
+响应式
+内容溢出后的样式
+resize:both
+高度可变
+主要缺陷
+
+
+
+
+Absolute
+现代浏览器&amp;IE8+
+是
+会导致容器溢出
+是
+是*
+‘可变高度’的特性不能跨浏览器
+
+
+负margin值
+所有 否 带滚动条
+大小改变后不再居中
+否
+不具有响应式特性，margin值必须经过手工计算
+
+
+Transform
+现代浏览器&amp;IE9+
+是
+会导致容器溢出
+是
+是
+妨碍渲染
+
+
+Table-Cell
+现代浏览器&amp;IE8+
+是
+撑开容器
+否
+是
+会加上多余的标记
+
+
+Inline-Block
+现代浏览器&amp;IE8+&amp;IE7*
+是
+撑开容器
+否
+是
+需要使用容器包裹和hack式的样式
+
+
+Flexbox
+现代浏览器&amp;IE10+
+是
+会导致容器溢出
+是
+是
+需要使用容器包裹和厂商前缀（vendor prefix）
+
+
+
+
+          
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/27/div完全居中/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/25/阳光培养计划（3）/" itemprop="url">
                   阳光培养计划（3）
                 </a>
@@ -1253,131 +1426,6 @@ Pipe
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/22/js 模拟弹簧运动/" itemprop="url">
-                  js 模拟弹簧运动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T14:16:37+08:00" content="2016-03-22">
-              2016-03-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/22/js 模拟弹簧运动/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/js 模拟弹簧运动/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          速度图
-关键代码123456789101112131415161718192021222324252627   (function step(x,v)&#123;     var result= (function stepper(x, v) &#123;               var frameRate =1/60, destX = 0, k =100, b = 20,errorMargin = 0.00001;                // 弹簧拉力 =  弹性系数 * 拉伸距离                var Fspring = -k * (x - destX);                // Fdamper = (cpsv^2)/2                  // 简化                  // 阻力 = 阻力系数* 阻力系数                var Fdamper = -b * v;                          //F=ma  m忽略                var a = Fspring
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/22/js 模拟弹簧运动/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1423,7 +1471,7 @@ Pipe
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
