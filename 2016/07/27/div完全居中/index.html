@@ -80,106 +80,15 @@
 
 
 
-<meta name="description" content="所用样式
-支持的浏览器
-是否响应式
-内容溢出后的样式
-resize:both
-高度可变
-主要缺陷
-
-
-
-
-Absolute
-现代浏览器&amp;amp;IE8+
-是
-会导致容器溢出
-是
-是*
-‘可变高度’的特性不能跨浏览器
-
-
-负margin值
-所有 否 带滚动条
-大小改变后不再居中
-否
-不具有响应式特性，margin值必须经过手工计算
-
-
-Transform
-现代浏览器&amp;amp;IE9+
-是
-会导">
 <meta property="og:type" content="article">
 <meta property="og:title" content="div完全居中">
 <meta property="og:url" content="http://yoursite.com/2016/07/27/div完全居中/index.html">
 <meta property="og:site_name" content="Ryan724">
-<meta property="og:description" content="所用样式
-支持的浏览器
-是否响应式
-内容溢出后的样式
-resize:both
-高度可变
-主要缺陷
-
-
-
-
-Absolute
-现代浏览器&amp;amp;IE8+
-是
-会导致容器溢出
-是
-是*
-‘可变高度’的特性不能跨浏览器
-
-
-负margin值
-所有 否 带滚动条
-大小改变后不再居中
-否
-不具有响应式特性，margin值必须经过手工计算
-
-
-Transform
-现代浏览器&amp;amp;IE9+
-是
-会导">
-<meta property="og:updated_time" content="2016-08-27T09:40:03.000Z">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/7cc829d3gw1e8dtm5q14rj20gu0b4jrr.jpg">
+<meta property="og:updated_time" content="2016-08-27T10:37:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="div完全居中">
-<meta name="twitter:description" content="所用样式
-支持的浏览器
-是否响应式
-内容溢出后的样式
-resize:both
-高度可变
-主要缺陷
-
-
-
-
-Absolute
-现代浏览器&amp;amp;IE8+
-是
-会导致容器溢出
-是
-是*
-‘可变高度’的特性不能跨浏览器
-
-
-负margin值
-所有 否 带滚动条
-大小改变后不再居中
-否
-不具有响应式特性，margin值必须经过手工计算
-
-
-Transform
-现代浏览器&amp;amp;IE9+
-是
-会导">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/7cc829d3gw1e8dtm5q14rj20gu0b4jrr.jpg">
 
 
 
@@ -373,7 +282,9 @@ Transform
       
 
       
-        <table>
+        <p><img src="http://ww2.sinaimg.cn/large/7cc829d3gw1e8dtm5q14rj20gu0b4jrr.jpg" alt="tu"></p>
+<a id="more"></a>
+<table>
 <thead>
 <tr>
 <th style="text-align:left">所用样式</th>
@@ -397,9 +308,11 @@ Transform
 </tr>
 <tr>
 <td style="text-align:left">负margin值</td>
-<td style="text-align:center">所有 否 带滚动条</td>
+<td style="text-align:center">所有</td>
+<td style="text-align:center">否</td>
+<td style="text-align:left">带滚动条</td>
 <td style="text-align:center">大小改变后不再居中</td>
-<td style="text-align:left">否</td>
+<td style="text-align:center">否</td>
 <td style="text-align:center">不具有响应式特性，margin值必须经过手工计算</td>
 </tr>
 <tr>
@@ -440,7 +353,27 @@ Transform
 </tr>
 </tbody>
 </table>
-
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dialog"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>##高度已知</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">	<span class="selector-class">.dialog</span>&#123;</div><div class="line">		  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">		  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">		  <span class="attribute">margin</span>: auto;</div><div class="line">		  <span class="attribute">position</span>: absolute;</div><div class="line">		  <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*** 负margin **/</span></div><div class="line">	<span class="selector-class">.dialog</span>&#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">        <span class="attribute">padding</span>: <span class="number">20px</span>;</div><div class="line">        <span class="attribute">position</span>: absolute;</div><div class="line">        <span class="attribute">top</span>: <span class="number">50%</span>; <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">        <span class="attribute">margin-left</span>: -<span class="number">170px</span>; <span class="comment">/* (width + padding)/2 */</span></div><div class="line">        <span class="attribute">margin-top</span>: -<span class="number">120px</span>; <span class="comment">/* (height + padding)/2 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##高度未知</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	<span class="selector-class">.dialog</span>&#123;</div><div class="line">		   	<span class="attribute">margin</span>: auto;</div><div class="line">			<span class="attribute">position</span>: absolute;</div><div class="line">			<span class="attribute">top</span>: <span class="number">50%</span>; </div><div class="line">			<span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">			<span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(-50%,-50%);</div><div class="line">			    <span class="attribute">-ms-transform</span>: <span class="built_in">translate</span>(-50%,-50%);</div><div class="line">		         	<span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="省略号"><a href="#省略号" class="headerlink" title="省略号"></a>省略号</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.nowrap li&#123; </div><div class="line">   white-space:nowrap; //强制不换行</div><div class="line">   width:100px; </div><div class="line">   overflow:hidden; </div><div class="line">   text-overflow: ellipsis; //..</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###左侧导航</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> =<span class="string">"nav"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>左侧导航左侧导航左侧导航<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> =<span class="string">"container"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>中间内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.nav&#123;</div><div class="line">	position:relative;</div><div class="line">	float:left;</div><div class="line">	width:190px;</div><div class="line">	margin-right:-190px;//相当于同行平移回来；</div><div class="line">	background:lightblue;</div><div class="line">	&#125;</div><div class="line">.container&#123;</div><div class="line">	float:right;</div><div class="line">	width:100%;</div><div class="line">	background:pink;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">	margin-left:200px;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>在非IE浏览器（如Firefox）下，当容器的高度为auto，且容器的内容中有浮动（float为left或right）的元素，在这种情况下，容器的高度不能自动伸长以适应内容的高度，使得内容溢出到容器外面而影响（甚至破坏）布局的现象。这个现象叫浮动溢出，为了防止这个现象的出现而进行的CSS处理，就叫CSS清除浮动。</p>
+<ul>
+<li>添加最后一个元素<div style="clear:both"></div></li>
+<li>父元素设置overflow: hidden;</li>
+<li>使用CSS的:</li>
+</ul>
+<h3 id="flex-学习教程"><a href="#flex-学习教程" class="headerlink" title="flex 学习教程"></a>flex 学习教程</h3><pre><code>flex：none | &lt;&apos; flex-grow 扩展比率&apos;&gt; &lt;&apos; flex-shrink &gt;收缩比率&apos;? || &lt;&apos; flex-basis &apos;&gt;伸缩基准值
+</code></pre><p>z</p>
+<h3 id="getPosition"><a href="#getPosition" class="headerlink" title="getPosition"></a>getPosition</h3><pre><code>offset 系列 div 自身宽高，与上层关系
+client  当前对象可视区域宽高 活着border
+scroll 实际高度，或者对象到到窗口边的距离（被卷走高度）
+</code></pre>
       
     </div>
     
@@ -639,7 +572,7 @@ Transform
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#省略号"><span class="nav-number">1.</span> <span class="nav-text">省略号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动"><span class="nav-number">2.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-学习教程"><span class="nav-number">3.</span> <span class="nav-text">flex 学习教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getPosition"><span class="nav-number">4.</span> <span class="nav-text">getPosition</span></a></li></ol></div>
             
           </div>
         </section>
